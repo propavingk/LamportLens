@@ -21,3 +21,10 @@ core. The two programs share the format contract (`docs/FORMAT.md`), not code.
 ```
 src/lamportlens/
   __init__.py       __version__ only
+  __main__.py       python -m lamportlens entry point
+  model.py          AccountRecord, validation, JSONL parsing
+  rent.py           the rent-exempt arithmetic and rate presets
+  audit.py          statuses, storage bands, owner summaries
+  report.py         deterministic text and JSON rendering
+  cli.py            argparse, subcommands, exit codes, file IO
+```
