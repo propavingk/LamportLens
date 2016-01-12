@@ -28,3 +28,11 @@ src/lamportlens/
   report.py         deterministic text and JSON rendering
   cli.py            argparse, subcommands, exit codes, file IO
 ```
+
+### model.py
+
+Owns everything that can be said about a single line. `AccountRecord` is
+frozen, so no later stage can mutate parsed data. `parse_record` applies every
+validation rule in one place, and `parse_text` collects errors with their line
+numbers instead of raising. A malformed snapshot is a finding about the
+snapshot, not a reason to stop reading the file.
