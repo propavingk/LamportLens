@@ -36,3 +36,10 @@ frozen, so no later stage can mutate parsed data. `parse_record` applies every
 validation rule in one place, and `parse_text` collects errors with their line
 numbers instead of raising. A malformed snapshot is a finding about the
 snapshot, not a reason to stop reading the file.
+
+Validation is strict about fields that carry meaning. `data_len` is bounded by
+`MAX_ACCOUNT_DATA_LEN`, Solana's own 10 MiB account size limit, because an
+account larger than that cannot exist and a snapshot claiming otherwise has a
+bug in its exporter. Unknown keys are ignored, because different exporters add
+fields this tool has no opinion about.
+
