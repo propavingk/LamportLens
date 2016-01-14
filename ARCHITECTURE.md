@@ -43,3 +43,11 @@ account larger than that cannot exist and a snapshot claiming otherwise has a
 bug in its exporter. Unknown keys are ignored, because different exporters add
 fields this tool has no opinion about.
 
+### rent.py
+
+The arithmetic lives here and nowhere else. Two constants define it:
+`ACCOUNT_STORAGE_OVERHEAD` (128 bytes, the space an empty account occupies)
+and the active `lamports_per_byte`, with the named SIMD-0437 steps kept as
+presets. The formula is:
+
+```
