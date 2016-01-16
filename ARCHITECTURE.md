@@ -51,3 +51,10 @@ and the active `lamports_per_byte`, with the named SIMD-0437 steps kept as
 presets. The formula is:
 
 ```
+minimum_balance = (128 + data_len) * lamports_per_byte
+```
+
+`assess()` maps one record plus a rate to a status. The status vocabulary is
+deliberately small: underfunded, at-minimum, barely-above, funded, and the
+separate executable-excluded bucket. Executable accounts are excluded from the
+rent comparison on purpose; the loader holds programs, and applying the
