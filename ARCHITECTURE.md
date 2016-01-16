@@ -58,3 +58,10 @@ minimum_balance = (128 + data_len) * lamports_per_byte
 deliberately small: underfunded, at-minimum, barely-above, funded, and the
 separate executable-excluded bucket. Executable accounts are excluded from the
 rent comparison on purpose; the loader holds programs, and applying the
+account rule to them would produce phantom findings at scale.
+
+### audit.py
+
+Folds a list of records into the aggregates a reader needs: status counts,
+the total lamport bond represented by the exemptions, the underfunded deficit,
+what a closure sweep would return, per-band concentration, and a per-owner
