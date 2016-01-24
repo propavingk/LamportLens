@@ -65,3 +65,11 @@ account rule to them would produce phantom findings at scale.
 Folds a list of records into the aggregates a reader needs: status counts,
 the total lamport bond represented by the exemptions, the underfunded deficit,
 what a closure sweep would return, per-band concentration, and a per-owner
+summary. Every aggregate is a pure function of the assessments.
+
+Band edges live here, not in the report, because they are analysis policy:
+where "small" ends and "large" begins is a decision about the data, and the
+renderer should not be able to change it silently.
+
+### report.py
+
