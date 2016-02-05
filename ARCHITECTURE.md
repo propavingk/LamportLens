@@ -73,3 +73,10 @@ renderer should not be able to change it silently.
 
 ### report.py
 
+Two renderers over one `Analysis` object. The text renderer is line oriented
+and truncates every list with an explicit `... N more` line. The JSON renderer
+mirrors the same numbers with stable key order. Both are pure functions of the
+analysis: no clock, no randomness, no locale reads. Lamport amounts are
+printed raw, in lamports, because this tool never converts units on the
+reader's behalf.
+
