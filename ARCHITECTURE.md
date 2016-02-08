@@ -80,3 +80,11 @@ analysis: no clock, no randomness, no locale reads. Lamport amounts are
 printed raw, in lamports, because this tool never converts units on the
 reader's behalf.
 
+### cli.py
+
+Argument parsing, subcommand dispatch, rate resolution, file reading, output
+writing, and the mapping from findings to exit codes. Rate resolution order is
+explicit: `--lamports-per-byte` wins over `--preset`, which wins over the
+documented default. The CLI contains no analysis logic on purpose.
+
+## TypeScript verifier
