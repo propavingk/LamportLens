@@ -88,3 +88,10 @@ explicit: `--lamports-per-byte` wins over `--preset`, which wins over the
 documented default. The CLI contains no analysis logic on purpose.
 
 ## TypeScript verifier
+
+```
+verifier/src/
+  rent.ts        constants, minimumBalance, assess
+  parse.ts       JSONL parsing and the same validation rules
+  audit.ts       statuses, bands, totals, underfunded list
+  verify.ts      CLI front end emitting JSON for the parity script
