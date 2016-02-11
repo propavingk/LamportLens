@@ -95,3 +95,10 @@ verifier/src/
   parse.ts       JSONL parsing and the same validation rules
   audit.ts       statuses, bands, totals, underfunded list
   verify.ts      CLI front end emitting JSON for the parity script
+  verify.test.ts node:test tests over the fixtures
+```
+
+The verifier uses `JSON.parse` from the Node standard library, so unlike the
+Rust engine in a sibling project it needs no hand-rolled parser. What it does
+duplicate is the validation policy and the arithmetic, because that is the
+whole point of a second implementation.
