@@ -102,3 +102,11 @@ The verifier uses `JSON.parse` from the Node standard library, so unlike the
 Rust engine in a sibling project it needs no hand-rolled parser. What it does
 duplicate is the validation policy and the arithmetic, because that is the
 whole point of a second implementation.
+
+`scripts/parity.py` runs both implementations on every fixture and compares
+records, per-status counts, totals, bands, the underfunded list, parse error
+counts, and the findings total. A disagreement fails the build.
+
+## Data flow
+
+```
