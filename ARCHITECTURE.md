@@ -110,3 +110,10 @@ counts, and the findings total. A disagreement fails the build.
 ## Data flow
 
 ```
+snapshot.jsonl
+    |
+    v
+model.parse_text  ->  records[] + errors[]
+    |                        |
+    |                        +--> report parse error section
+    v
