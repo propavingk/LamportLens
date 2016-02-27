@@ -117,3 +117,10 @@ model.parse_text  ->  records[] + errors[]
     |                        |
     |                        +--> report parse error section
     v
+rent.assess (per record)  ->  assessments[] with status
+    |
+    v
+audit.audit  ->  AuditReport (counts, totals, bands, owners)
+    |
+    v
+report.Analysis
