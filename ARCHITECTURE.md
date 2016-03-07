@@ -132,3 +132,10 @@ render_text              render_json
     v                        v
 stdout or --output       stdout (--format json)
     |
+    v
+exit code: findings ? 1 : 0
+```
+
+## Boundaries and why they fall there
+
+- Parsing is separate from analysis so validation errors are data. A snapshot
