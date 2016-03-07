@@ -124,3 +124,11 @@ audit.audit  ->  AuditReport (counts, totals, bands, owners)
     |
     v
 report.Analysis
+    |
+    +-----------+------------+
+    v                        v
+render_text              render_json
+    |                        |
+    v                        v
+stdout or --output       stdout (--format json)
+    |
