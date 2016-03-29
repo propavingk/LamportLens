@@ -25,3 +25,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `scripts/parity.py` comparing Python and TypeScript on every fixture.
 
 ## [0.8.0] - 2024-05-21
+
+### Added
+
+- Executable program accounts are classified as `executable-excluded` and left
