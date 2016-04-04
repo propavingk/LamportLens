@@ -29,3 +29,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Executable program accounts are classified as `executable-excluded` and left
+  out of bands, totals and owner locked sums.
+
+## [0.7.0] - 2023-04-11
+
+### Added
