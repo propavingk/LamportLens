@@ -39,3 +39,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Underfunded list sorted by deficit descending.
 
 ## [0.6.0] - 2022-02-01
+
+### Added
+
+- JSON report with fixed keys, including per-owner summaries.
+- `bands` and `owners` subcommands.
