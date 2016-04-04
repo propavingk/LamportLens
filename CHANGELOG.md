@@ -34,3 +34,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.7.0] - 2023-04-11
 
 ### Added
+
+- The `barely-above` ratio (1.01) and the `reclaimable on close` total.
+- Underfunded list sorted by deficit descending.
+
+## [0.6.0] - 2022-02-01
