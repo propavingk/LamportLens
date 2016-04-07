@@ -53,3 +53,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Seven fixed data-length bands with account counts and locked totals.
 
 ## [0.4.0] - 2019-01-15
+
+### Added
+
+- Band reporting for storage concentration.
+- Locked, balance, deficit and reclaimable totals.
