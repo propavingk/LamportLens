@@ -58,3 +58,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Band reporting for storage concentration.
 - Locked, balance, deficit and reclaimable totals.
+
+## [0.3.0] - 2017-12-12
+
+### Added
+
