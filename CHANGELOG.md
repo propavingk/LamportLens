@@ -63,3 +63,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Named rate presets, including the historical 6,960 step.
+- `--lamports-per-byte` override.
+
+## [0.2.0] - 2016-10-04
