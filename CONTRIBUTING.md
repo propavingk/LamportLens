@@ -10,3 +10,9 @@ here.
 
 ## Setup
 
+The Python core needs Python 3.11 or newer and nothing else. The package uses
+the standard library only.
+
+```bash
+git clone <repository>
+cd lamportlens
