@@ -28,3 +28,9 @@ npm install
 npm run build
 ```
 
+## The checks
+
+Run all of these before opening a pull request. They are the same checks CI
+runs.
+
+```bash
