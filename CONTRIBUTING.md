@@ -22,3 +22,9 @@ export PYTHONPATH=src
 The TypeScript verifier needs Node 20 or newer and installs a single build
 dependency:
 
+```bash
+cd verifier
+npm install
+npm run build
+```
+
