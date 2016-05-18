@@ -34,3 +34,9 @@ Run all of these before opening a pull request. They are the same checks CI
 runs.
 
 ```bash
+PYTHONPATH=src python -m unittest discover -s tests -v
+cd verifier && npm run typecheck && npm run build && npm test && cd ..
+python scripts/parity.py
+python scripts/verify.py
+```
+
