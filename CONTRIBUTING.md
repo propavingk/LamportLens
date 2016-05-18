@@ -16,3 +16,9 @@ the standard library only.
 ```bash
 git clone <repository>
 cd lamportlens
+export PYTHONPATH=src
+```
+
+The TypeScript verifier needs Node 20 or newer and installs a single build
+dependency:
+
