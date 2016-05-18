@@ -40,3 +40,9 @@ python scripts/parity.py
 python scripts/verify.py
 ```
 
+`make test`, `make parity` and `make verify` wrap the same commands.
+
+The parity script is the important one when you touch arithmetic. Python and
+TypeScript implement the same rules independently, and any change to the rent
+formula, the status thresholds, the band edges, or the totals must land in
+both. A change that only edits one side will fail parity, and that failure is
