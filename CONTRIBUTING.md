@@ -46,3 +46,9 @@ The parity script is the important one when you touch arithmetic. Python and
 TypeScript implement the same rules independently, and any change to the rent
 formula, the status thresholds, the band edges, or the totals must land in
 both. A change that only edits one side will fail parity, and that failure is
+the point of the check.
+
+## The rate policy
+
+The rent-exempt minimum depends on `lamports_per_byte`, which the SIMD-0437
+schedule reduces in steps from 6,960 down to 696. The default in
