@@ -52,3 +52,9 @@ the point of the check.
 
 The rent-exempt minimum depends on `lamports_per_byte`, which the SIMD-0437
 schedule reduces in steps from 6,960 down to 696. The default in
+`src/lamportlens/rent.py` must always be the step that is live on mainnet,
+with a dated comment naming the source. Changing the default is a release
+note, not a silent edit: snapshots audited before and after a default change
+will report different deficits, and the changelog must say so.
+
+## What a good change looks like
