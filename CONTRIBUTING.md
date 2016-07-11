@@ -58,3 +58,9 @@ note, not a silent edit: snapshots audited before and after a default change
 will report different deficits, and the changelog must say so.
 
 ## What a good change looks like
+
+- One topic per pull request. A rule change does not also reorganize a module.
+- Tests for behavior changes. A new validation rule needs a failing line in
+  `samples/broken-lines.jsonl` or an in-memory record; a new arithmetic rule
+  needs an anchor value computed by hand in both test suites.
+- Re-run the CLI and the verifier after a change, and paste the real output
