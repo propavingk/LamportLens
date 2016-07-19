@@ -64,3 +64,9 @@ will report different deficits, and the changelog must say so.
   `samples/broken-lines.jsonl` or an in-memory record; a new arithmetic rule
   needs an anchor value computed by hand in both test suites.
 - Re-run the CLI and the verifier after a change, and paste the real output
+  into the pull request description if the report shape changed.
+- Keep the report deterministic. If an output byte depends on wall-clock time,
+  unsorted map iteration, or randomness, it is a bug.
+- Line-oriented output. New sections start with a label line and use two
+  spaces of indentation, matching the existing report.
+
