@@ -70,3 +70,9 @@ will report different deficits, and the changelog must say so.
 - Line-oriented output. New sections start with a label line and use two
   spaces of indentation, matching the existing report.
 
+## Standing rules
+
+1. Python: standard library only. TypeScript: the verifier may depend on
+   `typescript` and `@types/node` for building and nothing else. No runtime
+   dependencies in either language.
+2. No network access anywhere in the shipped code. The tools read files and
