@@ -94,3 +94,9 @@ will report different deficits, and the changelog must say so.
 
 ## Commit messages
 
+Use conventional prefixes, one topic each:
+
+```
+feat: add a per-owner deficit column
+fix: treat a zero balance at zero length as underfunded, not at-minimum
+docs: record the SIMD-0437 step dates in docs/RATE_SCHEDULE.md
