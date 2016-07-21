@@ -76,3 +76,9 @@ will report different deficits, and the changelog must say so.
    `typescript` and `@types/node` for building and nothing else. No runtime
    dependencies in either language.
 2. No network access anywhere in the shipped code. The tools read files and
+   write to stdout or to an explicitly named output path.
+3. No em dash in any file, in any of its three forms. `scripts/verify.py`
+   checks this mechanically.
+4. Fixtures are honest. Synthetic fixtures are labelled as synthetic in
+   `samples/README.md`, and `samples/build_fixture.py` must rebuild them byte
+   for byte. Never present a constructed snapshot as a capture.
