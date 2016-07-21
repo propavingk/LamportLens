@@ -82,3 +82,9 @@ will report different deficits, and the changelog must say so.
 4. Fixtures are honest. Synthetic fixtures are labelled as synthetic in
    `samples/README.md`, and `samples/build_fixture.py` must rebuild them byte
    for byte. Never present a constructed snapshot as a capture.
+5. Numbers that appear in documentation, assets or commit messages must come
+   from a real run. If you did not run it, do not write it.
+6. Meaningful exit codes stay stable: 0 clean, 1 findings, 2 usage or input
+   error.
+7. The JSON output keys in `docs/FORMAT.md` are a contract. Adding keys is a
+   minor change; renaming or removing them needs a changelog entry.
