@@ -88,3 +88,9 @@ will report different deficits, and the changelog must say so.
    error.
 7. The JSON output keys in `docs/FORMAT.md` are a contract. Adding keys is a
    minor change; renaming or removing them needs a changelog entry.
+8. Program ids in fixtures may be real, well-known addresses (system, SPL
+   token, token-2022, the loader). Account addresses must stay synthetic and
+   clearly patterned, and no fixture may contain private keys or seeds, ever.
+
+## Commit messages
+
