@@ -100,3 +100,9 @@ Use conventional prefixes, one topic each:
 feat: add a per-owner deficit column
 fix: treat a zero balance at zero length as underfunded, not at-minimum
 docs: record the SIMD-0437 step dates in docs/RATE_SCHEDULE.md
+test: anchor the 165-byte minimum in both implementations
+```
+
+## Reviewing your own diff
+
+Before asking for review, read your diff once as if it were someone else's:
