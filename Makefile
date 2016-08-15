@@ -6,3 +6,5 @@ export PYTHONPATH := src
 help:
 	@echo "lamportlens targets:"
 	@echo "  make test     run the Python tests and the TypeScript verifier tests"
+	@echo "  make verify   run the repository quality gate (scripts/verify.py)"
+	@echo "  make run      audit the snapshot sample and print the report"
