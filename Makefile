@@ -11,3 +11,5 @@ help:
 	@echo "  make parity   compare Python and TypeScript on the samples"
 	@echo "  make clean    remove caches and build output"
 
+test:
+	$(PYTHON) -m unittest discover -s tests -v
