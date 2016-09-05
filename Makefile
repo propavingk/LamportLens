@@ -15,3 +15,5 @@ test:
 	$(PYTHON) -m unittest discover -s tests -v
 	cd verifier && npm test
 
+verify:
+	$(PYTHON) scripts/verify.py
