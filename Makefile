@@ -19,3 +19,5 @@ verify:
 	$(PYTHON) scripts/verify.py
 
 run:
+	$(PYTHON) -m lamportlens audit samples/snapshot.jsonl
+
