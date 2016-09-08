@@ -21,3 +21,4 @@ verify:
 run:
 	$(PYTHON) -m lamportlens audit samples/snapshot.jsonl
 
+parity:
