@@ -72,3 +72,19 @@ whole question offline, and it diffs.
   executable-excluded for program accounts.
 - Totals the bond (`locked`), the deficit, the balances observed, and the
   lamports a closure sweep would return (`reclaimable`).
+- Groups accounts into seven fixed data-length bands and ranks owners by the
+  bond they hold.
+- Emits a line-oriented text report or a JSON report with fixed field names.
+- Cross-checks every rule with a second implementation in TypeScript. The two
+  engines are compared on every fixture by `scripts/parity.py`.
+
+<p align="center">
+  <img src="docs/assets/bands.svg" alt="Seven rows, one per data length band, with bars for account counts and two numeric columns: the 1M and above band holds 22,167,121,248 lamports across 2 accounts, the 1k-9.9k band holds 125,545,392 across 8, and the 100-999 band holds 58,630,914 across 26" width="640">
+</p>
+
+The graphic is built from the actual numbers in this repository's fixture: 44
+records, 3 underfunded accounts, a total bond of 22,357,719,216 lamports, and
+2 executable accounts excluded from every band.
+
+---
+
