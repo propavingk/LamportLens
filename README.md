@@ -88,3 +88,18 @@ records, 3 underfunded accounts, a total bond of 22,357,719,216 lamports, and
 
 ---
 
+## Quick start
+
+Nothing to install for the Python core:
+
+```bash
+export PYTHONPATH=src
+python -m lamportlens audit samples/snapshot.jsonl
+```
+
+Or install the console script with `pip install .` and run
+`lamportlens audit samples/snapshot.jsonl`.
+
+The TypeScript verifier builds with a single dev dependency: `cd verifier &&
+npm install && npm run build`, then `node dist/verify.js ../samples/snapshot.jsonl`.
+
