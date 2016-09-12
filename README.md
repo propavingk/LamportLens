@@ -57,3 +57,18 @@ new minimum, which turns part of that bond into recoverable capital. Accounts
 funded below the new minimum sit in the opposite state and are the findings
 this tool reports.
 
+A snapshot is the only way to see any of this. The accounts API answers one
+question at a time, and a dashboard shows today; a JSONL export answers the
+whole question offline, and it diffs.
+
+---
+
+## What it does
+
+- Validates every line of a snapshot and reports bad ones with line numbers
+  instead of aborting.
+- Computes each account's rent-exempt minimum at a chosen lamports-per-byte
+  rate and classifies it: underfunded, at-minimum, barely-above, funded, or
+  executable-excluded for program accounts.
+- Totals the bond (`locked`), the deficit, the balances observed, and the
+  lamports a closure sweep would return (`reclaimable`).
