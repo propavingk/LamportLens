@@ -103,3 +103,18 @@ Or install the console script with `pip install .` and run
 The TypeScript verifier builds with a single dev dependency: `cd verifier &&
 npm install && npm run build`, then `node dist/verify.js ../samples/snapshot.jsonl`.
 
+---
+
+## A real run: healthy snapshot
+
+The clean fixture has 12 accounts, all exempt, one program account excluded.
+This is the actual output, captured from the command shown:
+
+```bash
+PYTHONPATH=src python -m lamportlens audit samples/clean-snapshot.jsonl
+```
+
+```text
+LAMPORTLENS REPORT
+input: samples\clean-snapshot.jsonl
+records: 12 | lamports per byte: 6333 | parse errors: 0
