@@ -118,3 +118,19 @@ PYTHONPATH=src python -m lamportlens audit samples/clean-snapshot.jsonl
 LAMPORTLENS REPORT
 input: samples\clean-snapshot.jsonl
 records: 12 | lamports per byte: 6333 | parse errors: 0
+
+STATUS COUNTS
+  underfunded: 0
+  at-minimum: 0
+  barely-above: 0
+  funded: 11
+  executable-excluded: 1
+
+TOTALS
+  locked in exemptions: 19366314
+  balances observed: 34000000
+  underfunded deficit: 0
+  reclaimable on close: 0
+
+UNDERFUNDED (first 10, smallest surplus first)
+  none
