@@ -149,3 +149,18 @@ OWNERS (top 5 by locked lamports)
   11111111111111111111111111111111  accounts 1 underfunded 0 locked 810624
   BPFLoaderUpgradeab1e11111111111111111111111  accounts 1 underfunded 0 locked 0
 
+PARSE ERRORS (first 10)
+  none
+
+FINDINGS: 0
+```
+
+The exit code is 0. The executable program account is visible in the status
+counts and absent from every band and from the locked total, which is the
+exclusion rule working.
+
+---
+
+## A real run: snapshot with findings
+
+The snapshot fixture has 44 records and exercises every status. Command, then
