@@ -134,3 +134,18 @@ TOTALS
 
 UNDERFUNDED (first 10, smallest surplus first)
   none
+
+BANDS (first 10)
+  0 bytes: accounts 1, locked 810624
+  1-99: accounts 0, locked 0
+  100-999: accounts 10, locked 18555690
+  1k-9.9k: accounts 0, locked 0
+  10k-99k: accounts 0, locked 0
+  100k-999k: accounts 0, locked 0
+  1M and above: accounts 0, locked 0
+
+OWNERS (top 5 by locked lamports)
+  TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA  accounts 10 underfunded 0 locked 18555690
+  11111111111111111111111111111111  accounts 1 underfunded 0 locked 810624
+  BPFLoaderUpgradeab1e11111111111111111111111  accounts 1 underfunded 0 locked 0
+
