@@ -180,3 +180,18 @@ records: 44 | lamports per byte: 6333 | parse errors: 0
 
 STATUS COUNTS
   underfunded: 3
+  at-minimum: 7
+  barely-above: 1
+  funded: 31
+  executable-excluded: 2
+
+TOTALS
+  locked in exemptions: 22357719216
+  balances observed: 22625334712
+  underfunded deficit: 1021762
+  reclaimable on close: 13274968
+
+UNDERFUNDED (first 10, smallest surplus first)
+  FixTure017AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab owner TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb lamports 1200000 deficit 655569
+  FixTure016AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab owner TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA lamports 1600000 deficit 255569
+  FixTure020AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab owner ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL lamports 700000 deficit 110624
