@@ -210,3 +210,18 @@ OWNERS (top 5 by locked lamports)
   TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA  accounts 26 underfunded 1 locked 6390585969
   TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb  accounts 9 underfunded 1 locked 127400961
   ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL  accounts 4 underfunded 1 locked 4800414
+  11111111111111111111111111111111  accounts 2 underfunded 0 locked 1621248
+
+PARSE ERRORS (first 10)
+  none
+
+FINDINGS: 3
+```
+
+</details>
+
+The exit code is 1. Read the totals bottom-up: three accounts are short by
+1,021,762 lamports in total, the largest single deficit belongs to the
+token-2022 account at 1,200,000 lamports, and two of the three sit under
+owners whose bond is otherwise small, which is worth knowing before deciding
+where to spend attention.
