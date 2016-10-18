@@ -195,3 +195,18 @@ UNDERFUNDED (first 10, smallest surplus first)
   FixTure017AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab owner TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb lamports 1200000 deficit 655569
   FixTure016AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab owner TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA lamports 1600000 deficit 255569
   FixTure020AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab owner ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL lamports 700000 deficit 110624
+
+BANDS (first 10)
+  0 bytes: accounts 3, locked 2431872
+  1-99: accounts 3, locked 3989790
+  100-999: accounts 26, locked 58630914
+  1k-9.9k: accounts 8, locked 125545392
+  10k-99k: accounts 0, locked 0
+  100k-999k: accounts 0, locked 0
+  1M and above: accounts 2, locked 22167121248
+
+OWNERS (top 5 by locked lamports)
+  BPFLoaderUpgradeab1e11111111111111111111111  accounts 3 underfunded 0 locked 15833310624
+  TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA  accounts 26 underfunded 1 locked 6390585969
+  TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb  accounts 9 underfunded 1 locked 127400961
+  ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL  accounts 4 underfunded 1 locked 4800414
