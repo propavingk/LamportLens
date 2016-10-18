@@ -164,3 +164,19 @@ exclusion rule working.
 ## A real run: snapshot with findings
 
 The snapshot fixture has 44 records and exercises every status. Command, then
+the full capture collapsed so this page stays scannable:
+
+```bash
+PYTHONPATH=src python -m lamportlens audit samples/snapshot.jsonl
+```
+
+<details>
+<summary>Full report for the snapshot fixture (3 findings)</summary>
+
+```text
+LAMPORTLENS REPORT
+input: samples\snapshot.jsonl
+records: 44 | lamports per byte: 6333 | parse errors: 0
+
+STATUS COUNTS
+  underfunded: 3
