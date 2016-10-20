@@ -225,3 +225,19 @@ The exit code is 1. Read the totals bottom-up: three accounts are short by
 token-2022 account at 1,200,000 lamports, and two of the three sit under
 owners whose bond is otherwise small, which is worth knowing before deciding
 where to spend attention.
+
+---
+
+## Commands
+
+| Command | What it prints | Exit codes |
+|---|---|---|
+| `lamportlens version` (also `--version`) | `lamportlens <version>` | 0 |
+| `lamportlens audit PATH [--format text\|json] [--limit N] [--output FILE] [--preset NAME] [--lamports-per-byte N]` | the full report | 0 clean, 1 findings, 2 usage |
+| `lamportlens bands PATH [--preset NAME]` | band account counts and locked lamports | 0, or 1 when parse errors exist |
+| `lamportlens owners PATH [--preset NAME]` | the per-owner table, unpaginated | 0, or 1 when parse errors exist |
+
+`--limit N` sets how many entries each list section prints before the explicit
+`... N more` line. The default is 10, and a list is never silently truncated.
+
+---
