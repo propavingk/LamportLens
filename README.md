@@ -241,3 +241,18 @@ where to spend attention.
 `... N more` line. The default is 10, and a list is never silently truncated.
 
 ---
+
+## The input format
+
+One JSON object per line. The fields, their types and their rules:
+
+| Field | Type | Required | Rules |
+|---|---|---|---|
+| `address` | string | yes | non-empty |
+| `lamports` | integer | yes | 0 or greater |
+| `data_len` | integer | yes | 0 to 10,485,760 (Solana's 10 MiB account limit) |
+| `owner` | string | yes | non-empty; the owning program id |
+| `executable` | boolean or null | no | defaults to false; true marks a program account |
+
+Unknown keys are ignored, so exports with extra fields stay readable. Bad
+lines are collected with their line numbers and reported under `PARSE ERRORS`;
