@@ -256,3 +256,18 @@ One JSON object per line. The fields, their types and their rules:
 
 Unknown keys are ignored, so exports with extra fields stay readable. Bad
 lines are collected with their line numbers and reported under `PARSE ERRORS`;
+parsing continues and the good records still produce a full report. The
+complete contract, including the JSON report fields, is in
+[docs/FORMAT.md](docs/FORMAT.md).
+
+The fixtures in `samples/` are synthetic test vectors, and
+[samples/README.md](samples/README.md) says so explicitly and documents how
+each one is constructed. `samples/build_fixture.py` rebuilds them byte for
+byte. Program ids in the fixtures are real, well-known addresses; account
+addresses are clearly patterned fakes.
+
+---
+
+## A worked walkthrough
+
+Follow one record from the snapshot fixture, the first token account funded to
