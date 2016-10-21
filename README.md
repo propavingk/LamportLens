@@ -271,3 +271,19 @@ addresses are clearly patterned fakes.
 ## A worked walkthrough
 
 Follow one record from the snapshot fixture, the first token account funded to
+the historical bond. It carries `lamports: 2039280` and `data_len: 165`.
+
+**Step 1, validation.** The address and owner are non-empty strings, both
+numbers are integers in range, `executable` is absent so it defaults to false.
+The record is accepted.
+
+**Step 2, the minimum.** At the default rate of 6,333 lamports per byte:
+`(128 + 165) * 6333 = 1,855,569`. The account holds 2,039,280 lamports, which
+is 183,711 above the minimum. The same account under `--preset historical`
+computes a minimum of 2,039,280 and lands exactly at-minimum. One record, two
+rates, two different statuses: this is why the header line prints the rate.
+
+**Step 3, the status.** 2,039,280 is above `floor(1,855,569 * 1.01) =
+1,874,124`, so the status is funded, not barely-above. The ratio exists for
+accounts that sit inside that sliver.
+
