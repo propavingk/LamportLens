@@ -287,3 +287,18 @@ rates, two different statuses: this is why the header line prints the rate.
 1,874,124`, so the status is funded, not barely-above. The ratio exists for
 accounts that sit inside that sliver.
 
+**Step 4, the aggregates.** The account adds 1,855,569 to `locked`, 2,039,280
+to `balance`, 1,855,569 to the `100-999` band, and 1,855,569 to the token
+program's owner total. It contributes nothing to `reclaimable`, because
+funded accounts are not closure candidates.
+
+**Step 5, the report.** The account never appears as a line; it is visible
+only through the aggregates it moved. The report lists problems and
+concentration, not records.---
+
+## Statuses and what each one should trigger
+
+| Status | Meaning | Action |
+|---|---|---|
+| `underfunded` | holds less than the bond and is at risk under rent collection | top up to `minimum`, or close if unused |
+| `at-minimum` | funded exactly to the bond, nothing spendable | keep if used, close if not; the balance returns in full on close |
