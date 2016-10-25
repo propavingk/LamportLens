@@ -302,3 +302,18 @@ concentration, not records.---
 |---|---|---|
 | `underfunded` | holds less than the bond and is at risk under rent collection | top up to `minimum`, or close if unused |
 | `at-minimum` | funded exactly to the bond, nothing spendable | keep if used, close if not; the balance returns in full on close |
+| `barely-above` | within one percent of the bond, effectively unspendable | decide between topping up for real use or closing |
+| `funded` | holds meaningfully more than the bond | normal |
+| `executable-excluded` | a program account, outside the rent rule | no action from this tool |
+
+The full remediation playbook, including the fee caveat about closing
+accounts, is in [docs/OPERATIONS.md](docs/OPERATIONS.md).
+
+---
+
+## Exit codes and CI integration
+
+| Code | Meaning |
+|---|---|
+| 0 | no findings: no underfunded accounts, no parse errors |
+| 1 | findings present |
