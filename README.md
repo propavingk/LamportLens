@@ -348,3 +348,18 @@ PYTHONPATH=src python -m lamportlens bands samples/snapshot.jsonl
 100-999: accounts 26, locked 58630914
 1k-9.9k: accounts 8, locked 125545392
 10k-99k: accounts 0, locked 0
+100k-999k: accounts 0, locked 0
+1M and above: accounts 2, locked 22167121248
+```
+
+When the network switches to the next step, re-auditing the same snapshot
+under both rates once shows what the upgrade did to your storage bond, and
+the tool supports that with a `--preset` flag and nothing else.
+
+---
+
+## The second implementation
+
+`verifier/` is an independent implementation of the same arithmetic in
+TypeScript, standard library only at runtime. It exists to cross-check the
+rules, not to be faster or smaller. The two programs share the format
