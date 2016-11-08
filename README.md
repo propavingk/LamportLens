@@ -317,3 +317,19 @@ accounts, is in [docs/OPERATIONS.md](docs/OPERATIONS.md).
 |---|---|
 | 0 | no findings: no underfunded accounts, no parse errors |
 | 1 | findings present |
+| 2 | usage error: missing or unreadable input |
+
+A CI job that snapshots a program's accounts can use the exit code directly:
+
+```bash
+PYTHONPATH=src python -m lamportlens audit snapshot.jsonl --format json --output report.json
+```
+
+The JSON output is stable, so `report.json` can be committed as a build
+artifact or diffed between runs. Adding keys is a minor change; renaming or
+removing one needs a changelog entry, because consumers depend on them.
+
+---
+
+## The rate is the variable
+
