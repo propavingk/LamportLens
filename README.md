@@ -363,3 +363,18 @@ the tool supports that with a `--preset` flag and nothing else.
 `verifier/` is an independent implementation of the same arithmetic in
 TypeScript, standard library only at runtime. It exists to cross-check the
 rules, not to be faster or smaller. The two programs share the format
+contract, not code.
+
+| | Python core | TypeScript verifier |
+|---|---|---|
+| Location | `src/lamportlens/` | `verifier/src/` |
+| Entry point | `python -m lamportlens` | `node dist/verify.js` |
+| Output | text report, JSON report | JSON for the parity script |
+| Tests | 39 unit tests | 6 tests |
+| Runtime dependencies | none | none |
+
+```bash
+python scripts/parity.py
+```
+
+```text
