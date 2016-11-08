@@ -333,3 +333,18 @@ removing one needs a changelog entry, because consumers depend on them.
 
 ## The rate is the variable
 
+The rent-exempt minimum depends on `lamports_per_byte`, which SIMD-0437
+reduces in steps from 6,960 toward 696. The default is 6,333, the step listed
+as live on mainnet since epoch 1028 on 2026-09-03, and the full step table
+with dates is in [docs/RATE_SCHEDULE.md](docs/RATE_SCHEDULE.md).
+
+```bash
+PYTHONPATH=src python -m lamportlens bands samples/snapshot.jsonl
+```
+
+```text
+0 bytes: accounts 3, locked 2431872
+1-99: accounts 3, locked 3989790
+100-999: accounts 26, locked 58630914
+1k-9.9k: accounts 8, locked 125545392
+10k-99k: accounts 0, locked 0
