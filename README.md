@@ -378,3 +378,19 @@ python scripts/parity.py
 ```
 
 ```text
+clean-snapshot.jsonl: OK
+snapshot.jsonl: OK
+broken-lines.jsonl: OK
+parity: 3/3 fixtures agree
+```
+
+The parity check earned its keep during development. The first TypeScript
+draft sorted the underfunded list by ascending deficit while the Python report
+lists the largest deficit first, and the comparison flagged the disagreement
+on the first run. That is the entire reason the second implementation exists.
+
+---
+
+## Design decisions
+
+Each of these has a paragraph in [docs/DESIGN_NOTES.md](docs/DESIGN_NOTES.md)
