@@ -409,3 +409,18 @@ with the alternative that was rejected and why. The short version:
   belongs at the top.
 - Two independent implementations instead of shared code, because
   interpretation errors are the defects that actually happen.
+- The rate is an input with a dated default, so old snapshots can be
+  re-audited under both the old and the new rate.
+
+---
+
+## Repository layout
+
+```
+lamportlens/
+  README.md                      this document
+  LICENSE                        MIT
+  CHANGELOG.md                   release history
+  CONTRIBUTING.md                setup, checks, standing rules
+  SECURITY.md                    threat model and reporting
+  CODE_OF_CONDUCT.md             Contributor Covenant 2.1
