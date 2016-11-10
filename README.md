@@ -394,3 +394,18 @@ on the first run. That is the entire reason the second implementation exists.
 ## Design decisions
 
 Each of these has a paragraph in [docs/DESIGN_NOTES.md](docs/DESIGN_NOTES.md)
+with the alternative that was rejected and why. The short version:
+
+- Integer arithmetic only, because the boundary comparison `at-minimum` is the
+  comparison the tool exists to make.
+- Executable accounts are excluded from the rent comparison and counted in
+  their own status, because the loader holds programs and the account rule
+  does not apply the same way.
+- The barely-above ratio is 1.01, coarse on purpose, to produce a short list
+  of closure candidates rather than a model of what each account can afford.
+- Band edges are fixed and printed, so two reports of the same program stay
+  comparable after the data changes.
+- The underfunded list is sorted by deficit descending: the actionable account
+  belongs at the top.
+- Two independent implementations instead of shared code, because
+  interpretation errors are the defects that actually happen.
