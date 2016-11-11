@@ -455,3 +455,18 @@ lamportlens/
     __main__.py                  module entry point
     cli.py                       argparse, subcommands, exit codes
     audit.py                     statuses, bands, owner summaries
+    model.py                     record model and validation
+    rent.py                      the arithmetic and the rate presets
+    report.py                    deterministic text and JSON renderers
+  tests/
+    test_cli.py                  end to end exit codes and formats
+    test_audit.py                designed counts over the fixtures
+    test_model.py                validation and error collection
+    test_rent.py                 formula anchors and status rules
+  verifier/
+    package.json                 build metadata, one dev dependency
+    tsconfig.json                strict TypeScript, NodeNext
+    src/rent.ts                  constants, minimumBalance, assess
+    src/parse.ts                 JSONL parsing and validation
+    src/audit.ts                 statuses, bands, totals
+    src/verify.ts                JSON front end for the parity script
