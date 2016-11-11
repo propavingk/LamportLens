@@ -470,3 +470,19 @@ lamportlens/
     src/parse.ts                 JSONL parsing and validation
     src/audit.ts                 statuses, bands, totals
     src/verify.ts                JSON front end for the parity script
+    src/verify.test.ts           node:test tests over the fixtures
+  .github/
+    PULL_REQUEST_TEMPLATE.md     checklists tied to the real checks
+    ISSUE_TEMPLATE/              bug and feature forms
+    workflows/ci.yml             python, verifier and parity jobs
+```
+
+---
+
+## Tests and verification
+
+The suite is run before every push, and the numbers below are the actual
+results from this repository:
+
+```bash
+PYTHONPATH=src python -m unittest discover -s tests -v
