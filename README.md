@@ -424,3 +424,19 @@ lamportlens/
   CONTRIBUTING.md                setup, checks, standing rules
   SECURITY.md                    threat model and reporting
   CODE_OF_CONDUCT.md             Contributor Covenant 2.1
+  ARCHITECTURE.md                module by module, data flow, boundaries
+  ROADMAP.md                     directions, no dates
+  CITATION.cff                   citation metadata
+  Makefile                       help, test, verify, run, parity, clean
+  .editorconfig                  editor defaults
+  .gitattributes                 LF enforcement, text classification
+  .gitignore                     caches and build output
+  pyproject.toml                 package metadata and console script
+  docs/
+    FORMAT.md                    the input and output contract
+    RATE_SCHEDULE.md             every SIMD-0437 step, dates, and minima
+    OPERATIONS.md                capture, read, remediate
+    TESTING.md                   the test map and how to extend it
+    DESIGN_NOTES.md              decisions with rejected alternatives
+    assets/logo.svg              wordmark
+    assets/bands.svg             the snapshot's bands as a graphic
