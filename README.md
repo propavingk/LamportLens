@@ -440,3 +440,18 @@ lamportlens/
     DESIGN_NOTES.md              decisions with rejected alternatives
     assets/logo.svg              wordmark
     assets/bands.svg             the snapshot's bands as a graphic
+    assets/banner.svg            the rate ladder, with the step motion
+  samples/
+    README.md                    how each fixture was built
+    build_fixture.py             deterministic fixture builder
+    clean-snapshot.jsonl         no findings, exit 0
+    snapshot.jsonl               every status, 3 findings, exit 1
+    broken-lines.jsonl           validation errors, exit 1
+  scripts/
+    parity.py                    compares both engines on every fixture
+    verify.py                    the eight mechanical quality checks
+  src/lamportlens/
+    __init__.py                  version
+    __main__.py                  module entry point
+    cli.py                       argparse, subcommands, exit codes
+    audit.py                     statuses, bands, owner summaries
