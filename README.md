@@ -486,3 +486,18 @@ results from this repository:
 
 ```bash
 PYTHONPATH=src python -m unittest discover -s tests -v
+```
+
+```text
+Ran 39 tests in 0.007s
+
+OK
+```
+
+```bash
+cd verifier && npm test
+```
+
+```text
+tests 6
+pass 6
