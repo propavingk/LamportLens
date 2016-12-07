@@ -501,3 +501,18 @@ cd verifier && npm test
 ```text
 tests 6
 pass 6
+fail 0
+```
+
+The test map, per file, is in [docs/TESTING.md](docs/TESTING.md). In short:
+validation rules each have a failing line, the arithmetic has hand-computed
+anchors in both languages (810,624 and 1,855,569 at the default rate,
+890,880 and 2,039,280 at the historical rate), the audit has designed counts
+on both fixtures, and the CLI has exit-code tests for 0, 1 and 2.
+
+The eight mechanical checks, including em dash and SVG label overlap:
+
+```bash
+python scripts/verify.py
+```
+
