@@ -10,3 +10,6 @@ running this weekly would ask for next.
 - A comparison mode that takes two JSON reports and prints what changed,
   instead of requiring `git diff` on the rendered text.
 
+## Rates
+
+- A `--rate-schedule` command that prints the SIMD-0437 step table from
