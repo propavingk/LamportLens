@@ -7,3 +7,6 @@ running this weekly would ask for next.
 
 - A `--summary` mode printing only the totals, for dashboards and CI logs.
 - Per-owner deficit as a column in the owner summary, not only a count.
+- A comparison mode that takes two JSON reports and prints what changed,
+  instead of requiring `git diff` on the rendered text.
+
