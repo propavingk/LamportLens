@@ -13,3 +13,5 @@ running this weekly would ask for next.
 ## Rates
 
 - A `--rate-schedule` command that prints the SIMD-0437 step table from
+  `docs/RATE_SCHEDULE.md` in machine-readable form, so tooling can pin a step
+  without parsing documentation.
