@@ -18,3 +18,5 @@ running this weekly would ask for next.
 - First-class support for re-auditing a snapshot under every step at once,
   which today means six invocations and a diff.
 
+## Input
+
