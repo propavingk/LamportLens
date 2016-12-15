@@ -15,3 +15,6 @@ running this weekly would ask for next.
 - A `--rate-schedule` command that prints the SIMD-0437 step table from
   `docs/RATE_SCHEDULE.md` in machine-readable form, so tooling can pin a step
   without parsing documentation.
+- First-class support for re-auditing a snapshot under every step at once,
+  which today means six invocations and a diff.
+
