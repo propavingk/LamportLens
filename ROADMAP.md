@@ -20,3 +20,6 @@ running this weekly would ask for next.
 
 ## Input
 
+- A streaming mode for snapshots larger than memory, processing the file in
+  chunks with the same aggregates.
+- Optional slot metadata in the header, so a report can name the slot it
