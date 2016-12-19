@@ -23,3 +23,6 @@ running this weekly would ask for next.
 - A streaming mode for snapshots larger than memory, processing the file in
   chunks with the same aggregates.
 - Optional slot metadata in the header, so a report can name the slot it
+  describes instead of only the file it read.
+- A documented capture recipe for one RPC method, so the README can link to a
+  script that produces the format honestly for at least one provider.
