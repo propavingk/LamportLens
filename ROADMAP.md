@@ -28,3 +28,6 @@ running this weekly would ask for next.
   script that produces the format honestly for at least one provider.
 
 ## Verification
+
+- More anchor values in both test suites, especially around the band edges and
+  the barely-above ratio boundary.
