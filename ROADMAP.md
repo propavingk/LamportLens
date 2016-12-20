@@ -31,3 +31,6 @@ running this weekly would ask for next.
 
 - More anchor values in both test suites, especially around the band edges and
   the barely-above ratio boundary.
+- A property test that generates random records and asserts the parity script
+  holds on generated data, not only on authored fixtures.
+- A contributed fixture from a real capture, with provenance recorded in
