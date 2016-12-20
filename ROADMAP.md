@@ -34,3 +34,5 @@ running this weekly would ask for next.
 - A property test that generates random records and asserts the parity script
   holds on generated data, not only on authored fixtures.
 - A contributed fixture from a real capture, with provenance recorded in
+  `samples/README.md`.
+
