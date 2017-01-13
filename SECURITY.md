@@ -23,3 +23,7 @@ A snapshot is public information by construction: account addresses, lamports,
 data lengths, owners, and the executable flag are all visible to any node.
 The tool's own design rule is that a snapshot file must never contain private
 keys or seed phrases, and the fixtures in this repository follow that rule.
+
+The realistic threat model for a tool like this is malformed input:
+
+1. **Parser crashes.** A crafted line might trigger an unhandled exception.
