@@ -14,3 +14,8 @@ not:
 
 - open sockets, make HTTP requests, or resolve DNS names;
 - connect to a cluster, hold keys, sign anything, or send transactions;
+- execute anything from the input, including field values that resemble code
+  or paths;
+- write files by default; `--output` writes exactly one report file to the
+  path you name.
+
