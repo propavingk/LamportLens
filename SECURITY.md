@@ -19,3 +19,7 @@ not:
 - write files by default; `--output` writes exactly one report file to the
   path you name.
 
+A snapshot is public information by construction: account addresses, lamports,
+data lengths, owners, and the executable flag are all visible to any node.
+The tool's own design rule is that a snapshot file must never contain private
+keys or seed phrases, and the fixtures in this repository follow that rule.
