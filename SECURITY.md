@@ -44,3 +44,7 @@ The realistic threat model for a tool like this is malformed input:
 
 - It does not verify that the snapshot is truthful. It checks internal
   consistency against the rent formula, not provenance.
+- It does not validate addresses or program ids. Any non-empty string is
+  accepted; the tool compares and prints them, it does not verify them.
+- It does not model fees. The exemption numbers it reports are bonds, not
+  costs, and closing an account is a transaction that costs fees the tool
