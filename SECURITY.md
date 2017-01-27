@@ -57,3 +57,7 @@ The realistic threat model for a tool like this is malformed input:
 Snapshots are usually harmless, but they can be sensitive in aggregate: a full
 dump of your program's accounts reveals your user base size, your storage
 costs, and the exact lamport flows you operate. Treat large snapshots like any
+internal dataset. The fixtures in this repository are synthetic and exist so
+you can test without any real data at all.
+
+## Reporting a vulnerability
