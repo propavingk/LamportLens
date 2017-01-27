@@ -48,3 +48,8 @@ The realistic threat model for a tool like this is malformed input:
   accepted; the tool compares and prints them, it does not verify them.
 - It does not model fees. The exemption numbers it reports are bonds, not
   costs, and closing an account is a transaction that costs fees the tool
+  does not compute.
+- It is not a monitoring system. A clean report on a stale snapshot says
+  nothing about the current cluster state.
+
+## Handling snapshots responsibly
