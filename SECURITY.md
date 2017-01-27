@@ -53,3 +53,7 @@ The realistic threat model for a tool like this is malformed input:
   nothing about the current cluster state.
 
 ## Handling snapshots responsibly
+
+Snapshots are usually harmless, but they can be sensitive in aggregate: a full
+dump of your program's accounts reveals your user base size, your storage
+costs, and the exact lamport flows you operate. Treat large snapshots like any
