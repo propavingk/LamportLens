@@ -65,3 +65,8 @@ you can test without any real data at all.
 Report suspected vulnerabilities privately through the repository security
 advisory feature, or contact the maintainers at [MAINTAINER CONTACT]. Please
 include:
+
+- the smallest snapshot that reproduces the issue (two or three lines are
+  usually enough);
+- the exact command line;
+- the observed output or crash, pasted verbatim.
