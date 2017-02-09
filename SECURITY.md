@@ -61,3 +61,7 @@ internal dataset. The fixtures in this repository are synthetic and exist so
 you can test without any real data at all.
 
 ## Reporting a vulnerability
+
+Report suspected vulnerabilities privately through the repository security
+advisory feature, or contact the maintainers at [MAINTAINER CONTACT]. Please
+include:
