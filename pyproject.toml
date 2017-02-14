@@ -5,3 +5,5 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lamportlens"
 version = "1.0.0"
+description = "Rent-exempt and balance hygiene auditor for captured Solana account snapshots."
+readme = "README.md"
