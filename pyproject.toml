@@ -7,3 +7,5 @@ name = "lamportlens"
 version = "1.0.0"
 description = "Rent-exempt and balance hygiene auditor for captured Solana account snapshots."
 readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
