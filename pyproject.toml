@@ -9,3 +9,4 @@ description = "Rent-exempt and balance hygiene auditor for captured Solana accou
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
+authors = [{ name = "the lamportlens authors" }]
