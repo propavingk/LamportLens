@@ -19,3 +19,5 @@ classifiers = [
 
 [project.scripts]
 lamportlens = "lamportlens.cli:main"
+
+[tool.setuptools.packages.find]
