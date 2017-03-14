@@ -22,3 +22,10 @@ class FormatError(ValueError):
 @dataclass(frozen=True)
 class AccountRecord:
     address: str
+    lamports: int
+    data_len: int
+    owner: str
+    executable: bool
+    line: int
+
+
