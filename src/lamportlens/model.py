@@ -7,3 +7,10 @@ reported as findings; parsing continues.
 """
 from __future__ import annotations
 
+import json
+from dataclasses import dataclass
+from pathlib import Path
+
+# Solana's own limit: MAX_ACCOUNT_DATA_LEN, 10 MiB.
+MAX_ACCOUNT_DATA_LEN = 10_485_760
+
