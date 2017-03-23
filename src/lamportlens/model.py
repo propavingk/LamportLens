@@ -58,3 +58,10 @@ def parse_record(obj: object, line: int) -> AccountRecord:
     address = _require_non_empty_str(obj, "address", line)
     lamports = _require_int(obj, "lamports", line, minimum=0)
     data_len = _require_int(obj, "data_len", line, minimum=0, maximum=MAX_ACCOUNT_DATA_LEN)
+    owner = _require_non_empty_str(obj, "owner", line)
+    executable = False
+    if "executable" in obj and obj["executable"] is not None:
+        if not isinstance(obj["executable"], bool):
+            raise FormatError(f"line {line}: field 'executable' must be a boolean")
+        executable = obj["executable"]
+    return AccountRecord(
