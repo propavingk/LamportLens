@@ -43,3 +43,11 @@ def _require_int(obj: dict, key: str, line: int, minimum: int, maximum: int | No
         raise FormatError(f"line {line}: missing required field '{key}'")
     value = obj[key]
     if isinstance(value, bool) or not isinstance(value, int):
+        raise FormatError(f"line {line}: field '{key}' must be an integer")
+    if value < minimum:
+        raise FormatError(f"line {line}: field '{key}' must be >= {minimum}")
+    if maximum is not None and value > maximum:
+        raise FormatError(f"line {line}: field '{key}' must be <= {maximum}")
+    return value
+
+
