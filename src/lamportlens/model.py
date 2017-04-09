@@ -72,3 +72,11 @@ def parse_record(obj: object, line: int) -> AccountRecord:
         executable=executable,
         line=line,
     )
+
+
+def parse_text(text: str) -> tuple[list[AccountRecord], list[tuple[int, str]]]:
+    """Parse JSONL text into (records, errors). Blank lines are ignored."""
+    records: list[AccountRecord] = []
+    errors: list[tuple[int, str]] = []
+    for number, raw in enumerate(text.splitlines(), start=1):
+        if not raw.strip():
