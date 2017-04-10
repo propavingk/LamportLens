@@ -28,3 +28,12 @@ BANDS: list[tuple[str, int, int]] = [
     ("10k-99k", 10_000, 99_999),
     ("100k-999k", 100_000, 999_999),
     ("1M and above", 1_000_000, MAX_ACCOUNT_DATA_LEN),
+]
+
+
+@dataclass
+class OwnerSummary:
+    owner: str
+    accounts: int = 0
+    underfunded: int = 0
+    locked: int = 0
