@@ -37,3 +37,12 @@ class OwnerSummary:
     accounts: int = 0
     underfunded: int = 0
     locked: int = 0
+    balance: int = 0
+
+
+@dataclass
+class BandSummary:
+    label: str
+    count: int = 0
+    locked: int = 0
+
