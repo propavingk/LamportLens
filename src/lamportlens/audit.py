@@ -54,3 +54,12 @@ class AuditReport:
     assessments: list[AccountAssessment] = field(default_factory=list)
     status_counts: dict[str, int] = field(default_factory=dict)
     underfunded: list[AccountAssessment] = field(default_factory=list)
+    bands: list[BandSummary] = field(default_factory=list)
+    owners: dict[str, OwnerSummary] = field(default_factory=dict)
+    total_locked: int = 0
+    total_balance: int = 0
+    total_deficit: int = 0
+    reclaimable: int = 0
+
+    @property
+    def findings(self) -> int:
