@@ -72,3 +72,12 @@ def band_label(data_len: int) -> str:
             return label
     return BANDS[-1][0]
 
+
+def audit(
+    records: list[AccountRecord],
+    lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE,
+) -> AuditReport:
+    report = AuditReport(
+        record_count=len(records),
+        lamports_per_byte=lamports_per_byte,
+        bands=[BandSummary(label=label) for label, _, _ in BANDS],
