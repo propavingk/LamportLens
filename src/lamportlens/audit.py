@@ -81,3 +81,12 @@ def audit(
         record_count=len(records),
         lamports_per_byte=lamports_per_byte,
         bands=[BandSummary(label=label) for label, _, _ in BANDS],
+    )
+    band_index = {band.label: band for band in report.bands}
+    counts: dict[str, int] = {}
+
+    for record in records:
+        assessment = assess(record, lamports_per_byte)
+        report.assessments.append(assessment)
+        counts[assessment.status] = counts.get(assessment.status, 0) + 1
+        if assessment.status == STATUS_UNDERFUNDED:
