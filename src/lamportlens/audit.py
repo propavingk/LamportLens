@@ -90,3 +90,12 @@ def audit(
         report.assessments.append(assessment)
         counts[assessment.status] = counts.get(assessment.status, 0) + 1
         if assessment.status == STATUS_UNDERFUNDED:
+            report.underfunded.append(assessment)
+            report.total_deficit += -assessment.surplus
+        if assessment.status != STATUS_EXCLUDED:
+            report.total_locked += assessment.minimum
+            report.total_balance += record.lamports
+            if assessment.status in (STATUS_AT_MINIMUM, STATUS_BARELY_ABOVE):
+                report.reclaimable += record.lamports
+            band = band_index[band_label(record.data_len)]
+            band.count += 1
