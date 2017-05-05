@@ -6,3 +6,10 @@ the cluster uses is:
 
     minimum_balance = (ACCOUNT_STORAGE_OVERHEAD + data_len) * lamports_per_byte
 
+The historical form of the same formula used two constants,
+lamports_per_byte_year (3480) and an exemption threshold (2.0), which multiply
+to 6960. The proposal that replaced the floating point form, SIMD-0194, folded
+the threshold into a single lamports_per_byte value of 6960, and SIMD-0437
+reduces that value in steps toward 696.
+
+This module keeps the named steps so a snapshot can be audited against the
