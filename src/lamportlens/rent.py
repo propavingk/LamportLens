@@ -19,3 +19,10 @@ byte, active since epoch 1028 on 2026-09-03.
 """
 from __future__ import annotations
 
+from dataclasses import dataclass
+
+from .model import AccountRecord
+
+ACCOUNT_STORAGE_OVERHEAD = 128
+
+RATE_PRESETS: dict[str, int] = {
