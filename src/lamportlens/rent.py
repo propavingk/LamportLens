@@ -33,3 +33,9 @@ RATE_PRESETS: dict[str, int] = {
     "simd-0437-2": 5080,
     "simd-0437-1": 6333,
     "simd-0194": 6960,
+    "historical": 6960,
+}
+
+DEFAULT_LAMPORTS_PER_BYTE = 6333
+
+STATUS_UNDERFUNDED = "underfunded"
