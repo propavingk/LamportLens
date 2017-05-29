@@ -46,3 +46,9 @@ STATUS_EXCLUDED = "executable-excluded"
 
 # A balance within one percent above the minimum is treated as held only for
 # the bond. The account cannot spend meaningfully without closing.
+BARELY_ABOVE_RATIO = 1.01
+
+
+def minimum_balance(data_len: int, lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE) -> int:
+    """Rent-exempt minimum for an account with this data length."""
+    if data_len < 0:
