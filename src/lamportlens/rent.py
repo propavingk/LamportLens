@@ -39,3 +39,10 @@ RATE_PRESETS: dict[str, int] = {
 DEFAULT_LAMPORTS_PER_BYTE = 6333
 
 STATUS_UNDERFUNDED = "underfunded"
+STATUS_AT_MINIMUM = "at-minimum"
+STATUS_BARELY_ABOVE = "barely-above"
+STATUS_FUNDED = "funded"
+STATUS_EXCLUDED = "executable-excluded"
+
+# A balance within one percent above the minimum is treated as held only for
+# the bond. The account cannot spend meaningfully without closing.
