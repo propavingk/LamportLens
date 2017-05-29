@@ -52,3 +52,10 @@ BARELY_ABOVE_RATIO = 1.01
 def minimum_balance(data_len: int, lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE) -> int:
     """Rent-exempt minimum for an account with this data length."""
     if data_len < 0:
+        raise ValueError("data_len must be >= 0")
+    if lamports_per_byte <= 0:
+        raise ValueError("lamports_per_byte must be > 0")
+    return (ACCOUNT_STORAGE_OVERHEAD + data_len) * lamports_per_byte
+
+
+@dataclass(frozen=True)
