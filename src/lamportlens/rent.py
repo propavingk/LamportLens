@@ -65,3 +65,10 @@ class AccountAssessment:
     surplus: int
     status: str
 
+
+def assess(
+    record: AccountRecord, lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE
+) -> AccountAssessment:
+    """Classify one account against the rent-exempt minimum.
+
+    Executable accounts are excluded from the rent comparison on purpose:
