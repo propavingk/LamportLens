@@ -59,3 +59,9 @@ def minimum_balance(data_len: int, lamports_per_byte: int = DEFAULT_LAMPORTS_PER
 
 
 @dataclass(frozen=True)
+class AccountAssessment:
+    record: AccountRecord
+    minimum: int
+    surplus: int
+    status: str
+
