@@ -531,3 +531,69 @@ verify: 8 checks, 0 failures
 ---
 
 ## Limitations
+
+- **No capture.** The tool audits snapshots; it does not talk to a cluster.
+  Any RPC provider or archival tool can produce the format, and `docs/FORMAT.md`
+  is the contract.
+- **No streaming.** The whole snapshot is held in memory. A file that fits in
+  a few hundred megabytes is fine; beyond that, slice by owner program.
+- **Point in time.** An audit describes the snapshot it read. It cannot tell
+  you that an underfunded account was funded a minute later.
+- **Bonds, not costs.** Closing an account is a transaction and costs fees the
+  tool does not model, so `reclaimable` is gross.
+- **No provenance.** A clean report means the snapshot is internally coherent
+  with the chosen rate. It says nothing about whether the snapshot is current
+  or complete.
+- **Program accounts are excluded.** That is deliberate, and the count is
+  reported, but it means the tool answers nothing about programs themselves.
+
+---
+
+## Glossary
+
+| Term | Meaning |
+|---|---|
+| lamport | the smallest unit of SOL; all amounts in this tool are lamports |
+| rent | the historical name for the storage bond; it is refundable, not a fee |
+| rent-exempt minimum | `(128 + data_len) * lamports_per_byte`, the balance an account must hold |
+| lamports_per_byte | the rate in the formula; SIMD-0437 reduces it in steps from 6,960 toward 696 |
+| bond | the lamports an account holds against its storage, returned on close |
+| data_len | the account's data size in bytes, bounded by 10 MiB |
+| executable | true for program accounts, which are outside the rent rule |
+| band | a fixed data-length range used to show where storage concentrates |
+| reclaimable | the balance of at-minimum and barely-above accounts; gross, before fees |
+| finding | an underfunded account or a parse error; drives the exit code |
+
+---
+
+## The mark
+
+The wordmark splits at the compound boundary: `lamport` in pine, `lens` in
+slate. The split is the one typographic decision and it means something: the
+lamport is the unit this tool counts, and the lens is the reading it produces.
+Both halves stay inside the accent budget, which is spent instead on the one
+bar in each asset a reader should look at first.
+
+The banner is the SIMD-0437 rate ladder: six bars, one per step, each showing
+the rent-exempt minimum for a zero-byte account at that step, computed with
+the same formula the tool uses. The 6,333 bar is copper because that step is
+live on mainnet. The motion is a single marker stepping down the ladder in
+order, which encodes the schedule being applied step by step; under reduced
+motion the marker sits on the live step and the banner reads the same. The
+data graphic uses the same palette, with the copper reserved for the band that
+holds nearly the whole storage bond in the fixture.
+
+The palette was derived from the subject, storage and accounting, rather than
+the usual dark dashboard: mint paper and pine ink, slate for secondary text,
+and one copper accent. Contrast against the paper background is 11.4:1 for
+pine, 4.9:1 for slate, and 4.5:1 for copper, which clears WCAG AA for the text
+sizes used. The logo asset is static; the banner carries the project's single
+animation.
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+<!-- draft note 106 -->
