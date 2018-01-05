@@ -1,0 +1,13 @@
+"""Command line interface.
+
+Exit codes, documented in docs/FORMAT.md:
+
+- 0: every account is exempt, no parse errors
+- 1: findings are present (underfunded accounts or parse errors)
+- 2: usage error (bad arguments, missing or unreadable input)
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
