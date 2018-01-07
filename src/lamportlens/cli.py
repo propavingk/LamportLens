@@ -35,3 +35,15 @@ def build_parser() -> argparse.ArgumentParser:
     audit_cmd.add_argument("--output", type=Path, default=None, help="write the report to a file")
     audit_cmd.add_argument(
         "--lamports-per-byte",
+        type=int,
+        default=None,
+        help=f"override the rate (default {DEFAULT_LAMPORTS_PER_BYTE})",
+    )
+    audit_cmd.add_argument(
+        "--preset",
+        choices=sorted(RATE_PRESETS),
+        default=None,
+        help="named SIMD-0437 step or the historical rate",
+    )
+
+    bands = sub.add_parser("bands", help="storage bands only")
