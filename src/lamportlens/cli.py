@@ -11,3 +11,15 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
+
+from . import __version__
+from .audit import audit
+from .model import parse_file
+from .rent import DEFAULT_LAMPORTS_PER_BYTE, RATE_PRESETS
+from .report import Analysis, render_json, render_text
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="lamportlens",
