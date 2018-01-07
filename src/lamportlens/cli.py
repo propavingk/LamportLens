@@ -47,3 +47,15 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     bands = sub.add_parser("bands", help="storage bands only")
+    bands.add_argument("input", type=Path, help="account snapshot (JSONL)")
+    bands.add_argument("--preset", choices=sorted(RATE_PRESETS), default=None)
+
+    owners = sub.add_parser("owners", help="per-owner summary only")
+    owners.add_argument("input", type=Path, help="account snapshot (JSONL)")
+    owners.add_argument("--preset", choices=sorted(RATE_PRESETS), default=None)
+
+    return parser
+
+
+def resolve_rate(lamports_per_byte: int | None, preset: str | None) -> int:
+    if lamports_per_byte is not None:
