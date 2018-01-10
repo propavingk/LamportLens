@@ -83,3 +83,15 @@ def load(path: Path) -> tuple:
 
 
 def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    records, errors = load(args.input)
+
+    if args.command == "bands":
+        rate = resolve_rate(None, args.preset)
+        report = audit(records, rate)
+        for band in report.bands:
+            print(f"{band.label}: accounts {band.count}, locked {band.locked}")
+        return 1 if errors else 0
+
+    if args.command == "owners":
