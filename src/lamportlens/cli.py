@@ -71,3 +71,15 @@ def resolve_rate(lamports_per_byte: int | None, preset: str | None) -> int:
 def load(path: Path) -> tuple:
     if not path.exists():
         print(f"lamportlens: input not found: {path}", file=sys.stderr)
+        raise SystemExit(2)
+    if not path.is_file():
+        print(f"lamportlens: input is not a file: {path}", file=sys.stderr)
+        raise SystemExit(2)
+    try:
+        return parse_file(path)
+    except OSError as exc:
+        print(f"lamportlens: cannot read {path}: {exc}", file=sys.stderr)
+        raise SystemExit(2)
+
+
+def main(argv: list[str] | None = None) -> int:
