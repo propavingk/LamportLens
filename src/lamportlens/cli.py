@@ -95,3 +95,15 @@ def main(argv: list[str] | None = None) -> int:
         return 1 if errors else 0
 
     if args.command == "owners":
+        rate = resolve_rate(None, args.preset)
+        report = audit(records, rate)
+        ranked = sorted(
+            report.owners.values(), key=lambda o: (-o.locked, -o.accounts, o.owner)
+        )
+        for owner in ranked:
+            print(
+                f"{owner.owner}  accounts {owner.accounts} "
+                f"underfunded {owner.underfunded} locked {owner.locked}"
+            )
+        if not ranked:
+            print("no owners present in snapshot")
