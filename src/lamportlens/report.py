@@ -69,3 +69,14 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     lines.append(f"OWNERS (top {min(5, limit)} by locked lamports)")
     ranked = sorted(
         report.owners.values(), key=lambda o: (-o.locked, -o.accounts, o.owner)
+    )
+    for owner in ranked[: min(5, limit)]:
+        lines.append(
+            f"  {owner.owner}  accounts {owner.accounts} "
+            f"underfunded {owner.underfunded} locked {owner.locked}"
+        )
+    if not ranked:
+        lines.append("  none")
+    lines.append("")
+    lines.append(f"PARSE ERRORS (first {limit})")
+    for number, message in analysis.parse_errors[:limit]:
