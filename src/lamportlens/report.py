@@ -80,3 +80,15 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     lines.append("")
     lines.append(f"PARSE ERRORS (first {limit})")
     for number, message in analysis.parse_errors[:limit]:
+        lines.append(f"  {message}")
+    if len(analysis.parse_errors) > limit:
+        lines.append(f"  ... {len(analysis.parse_errors) - limit} more")
+    if not analysis.parse_errors:
+        lines.append("  none")
+    lines.append("")
+    lines.append(f"FINDINGS: {analysis.findings}")
+    return "\n".join(lines) + "\n"
+
+
+def render_json(analysis: Analysis) -> dict:
+    report = analysis.report
