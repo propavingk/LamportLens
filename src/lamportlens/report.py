@@ -57,3 +57,15 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
             f"lamports {assessment.record.lamports} "
             f"deficit {-assessment.surplus}"
         )
+    if len(report.underfunded) > limit:
+        lines.append(f"  ... {len(report.underfunded) - limit} more")
+    if not report.underfunded:
+        lines.append("  none")
+    lines.append("")
+    lines.append(f"BANDS (first {limit})")
+    for band in report.bands:
+        lines.append(f"  {band.label}: accounts {band.count}, locked {band.locked}")
+    lines.append("")
+    lines.append(f"OWNERS (top {min(5, limit)} by locked lamports)")
+    ranked = sorted(
+        report.owners.values(), key=lambda o: (-o.locked, -o.accounts, o.owner)
