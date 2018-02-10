@@ -92,3 +92,14 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
 
 def render_json(analysis: Analysis) -> dict:
     report = analysis.report
+    return {
+        "input": analysis.source,
+        "records": report.record_count,
+        "lamports_per_byte": report.lamports_per_byte,
+        "findings": analysis.findings,
+        "status_counts": {
+            status: report.status_counts.get(status, 0)
+            for status in statuses_in_order(report)
+        },
+        "totals": {
+            "locked": report.total_locked,
