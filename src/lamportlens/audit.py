@@ -107,3 +107,22 @@ def audit(
             if assessment.status == STATUS_UNDERFUNDED:
                 owner.underfunded += 1
         else:
+            owner = report.owners.setdefault(record.owner, OwnerSummary(owner=record.owner))
+            owner.accounts += 1
+
+    report.status_counts = counts
+    report.underfunded.sort(key=lambda a: (a.surplus, a.record.address))
+    return report
+
+
+def status_count(report: AuditReport, status: str) -> int:
+    return report.status_counts.get(status, 0)
+
+
+def statuses_in_order(report: AuditReport) -> list[str]:
+    return [
+        STATUS_UNDERFUNDED,
+        STATUS_AT_MINIMUM,
+        STATUS_BARELY_ABOVE,
+        STATUS_FUNDED,
+        STATUS_EXCLUDED,
