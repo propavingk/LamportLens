@@ -18,3 +18,14 @@ import subprocess
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+VERIFIER = ROOT / "verifier" / "dist" / "verify.js"
+FIXTURES = ["clean-snapshot.jsonl", "snapshot.jsonl", "broken-lines.jsonl"]
+
+STATUS_KEYS = [
+    "underfunded",
+    "at-minimum",
+    "barely-above",
+    "funded",
+    "executable-excluded",
+]
