@@ -29,3 +29,13 @@ STATUS_KEYS = [
     "funded",
     "executable-excluded",
 ]
+TOTAL_KEYS = ["locked", "balance", "deficit", "reclaimable"]
+
+
+def python_report(fixture: Path) -> dict:
+    env = dict(os.environ, PYTHONPATH=str(ROOT / "src"))
+    result = subprocess.run(
+        [sys.executable, "-m", "lamportlens", "audit", str(fixture), "--format", "json"],
+        capture_output=True,
+        text=True,
+        env=env,
