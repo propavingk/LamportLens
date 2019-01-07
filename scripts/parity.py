@@ -60,3 +60,13 @@ def compare(name: str, py: dict, ts: dict) -> list[str]:
     def check(key: str, py_value, ts_value) -> None:
         if py_value != ts_value:
             disagreements.append(f"{key}: python={py_value} typescript={ts_value}")
+
+    check("records", py["records"], ts["records"])
+    check("lamports_per_byte", py["lamports_per_byte"], ts["lamports_per_byte"])
+    for status in STATUS_KEYS:
+        check(f"status.{status}", py["status_counts"].get(status), ts["status_counts"].get(status))
+    for key in TOTAL_KEYS:
+        check(f"totals.{key}", py["totals"][key], ts["totals"][key])
+    py_bands = {band["label"]: (band["accounts"], band["locked"]) for band in py["bands"]}
+    ts_bands = {band["label"]: (band["accounts"], band["locked"]) for band in ts["bands"]}
+    check("bands", py_bands, ts_bands)
