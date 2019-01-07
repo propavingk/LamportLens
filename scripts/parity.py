@@ -70,3 +70,14 @@ def compare(name: str, py: dict, ts: dict) -> list[str]:
     py_bands = {band["label"]: (band["accounts"], band["locked"]) for band in py["bands"]}
     ts_bands = {band["label"]: (band["accounts"], band["locked"]) for band in ts["bands"]}
     check("bands", py_bands, ts_bands)
+    py_under = [(a["address"], a["deficit"]) for a in py["underfunded"]]
+    ts_under = [(a["address"], a["deficit"]) for a in ts["underfunded"]]
+    check("underfunded", py_under, ts_under)
+    check("parse_error_count", len(py["parse_errors"]), len(ts["parse_errors"]))
+    check("findings", py["findings"], ts["findings"])
+    return disagreements
+
+
+def main() -> int:
+    if not VERIFIER.exists():
+        print(f"verifier build missing at {VERIFIER}")
