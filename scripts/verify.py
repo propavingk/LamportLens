@@ -75,3 +75,17 @@ def check_svg_comments() -> tuple[bool, str]:
         return False, "svg comments: double hyphen in " + ", ".join(bad)
     return True, "svg comments: no illegal double hyphen"
 
+
+def check_em_dash() -> tuple[bool, str]:
+    bad = []
+    for path in sorted(ROOT.rglob("*")):
+        if not path.is_file() or ".git" in path.parts:
+            continue
+        if "node_modules" in path.parts or "dist" in path.parts:
+            continue
+        if path.suffix not in TEXT_EXTENSIONS and path.name not in {
+            ".editorconfig", ".gitattributes", ".gitignore", "Makefile",
+        }:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
