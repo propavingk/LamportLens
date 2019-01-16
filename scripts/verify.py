@@ -89,3 +89,17 @@ def check_em_dash() -> tuple[bool, str]:
             continue
         try:
             text = path.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        for form in EM_DASH_FORMS:
+            if form in text:
+                bad.append(str(path.relative_to(ROOT)))
+                break
+    if bad:
+        return False, "em dash: found in " + ", ".join(bad)
+    return True, "em dash: none in any text file"
+
+
+def check_readme_attr_blocks() -> tuple[bool, str]:
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    if re.search(r"\)\{(?:[^}]*)(?:width|height)", text):
