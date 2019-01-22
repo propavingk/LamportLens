@@ -146,3 +146,17 @@ def check_svg_label_overlap() -> tuple[bool, str]:
         tree = ET.parse(path)
         labels = []
         for element in tree.getroot().iter(f"{ns}text"):
+            content = "".join(element.itertext()).strip()
+            if not content:
+                continue
+            try:
+                x = float(element.attrib.get("x", "0"))
+                y = float(element.attrib.get("y", "0"))
+            except ValueError:
+                continue
+            font_size = float(element.attrib.get("font-size", "11"))
+            family = element.attrib.get("font-family", "")
+            anchor = element.attrib.get("text-anchor", "start")
+            width = _text_width(content, font_size, family)
+            if anchor == "middle":
+                left = x - width / 2
