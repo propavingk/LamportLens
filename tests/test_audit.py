@@ -23,3 +23,11 @@ class CleanSnapshotTests(unittest.TestCase):
         self.assertEqual(self.report.status_counts.get(STATUS_FUNDED), 11)
         self.assertEqual(self.report.status_counts.get(STATUS_EXCLUDED), 1)
         self.assertEqual(self.report.findings, 0)
+
+    def test_no_deficit(self):
+        self.assertEqual(self.report.total_deficit, 0)
+        self.assertEqual(self.report.underfunded, [])
+
+
+class SnapshotTests(unittest.TestCase):
+    @classmethod
