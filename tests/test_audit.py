@@ -31,3 +31,11 @@ class CleanSnapshotTests(unittest.TestCase):
 
 class SnapshotTests(unittest.TestCase):
     @classmethod
+    def setUpClass(cls):
+        records, errors = parse_file(SAMPLES / "snapshot.jsonl")
+        assert not errors
+        cls.report = audit(records)
+
+    def test_status_counts(self):
+        self.assertEqual(self.report.status_counts.get(STATUS_UNDERFUNDED), 3)
+        self.assertEqual(self.report.status_counts.get(STATUS_AT_MINIMUM), 7)
