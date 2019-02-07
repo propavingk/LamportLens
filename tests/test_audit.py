@@ -39,3 +39,12 @@ class SnapshotTests(unittest.TestCase):
     def test_status_counts(self):
         self.assertEqual(self.report.status_counts.get(STATUS_UNDERFUNDED), 3)
         self.assertEqual(self.report.status_counts.get(STATUS_AT_MINIMUM), 7)
+        self.assertEqual(self.report.status_counts.get("barely-above"), 1)
+        self.assertEqual(self.report.status_counts.get(STATUS_FUNDED), 31)
+        self.assertEqual(self.report.status_counts.get(STATUS_EXCLUDED), 2)
+
+    def test_findings_are_the_underfunded_accounts(self):
+        self.assertEqual(self.report.findings, 3)
+        addresses = [a.record.address for a in self.report.underfunded]
+        self.assertEqual(len(addresses), 3)
+
