@@ -48,3 +48,11 @@ class SnapshotTests(unittest.TestCase):
         addresses = [a.record.address for a in self.report.underfunded]
         self.assertEqual(len(addresses), 3)
 
+    def test_total_deficit_is_the_sum_of_the_three(self):
+        # 1,855,569 - 1,600,000 + 1,855,569 - 1,200,000 + 810,624 - 700,000
+        expected = 255_569 + 655_569 + 110_624
+        self.assertEqual(self.report.total_deficit, expected)
+
+    def test_zero_byte_band(self):
+        band = next(b for b in self.report.bands if b.label == "0 bytes")
+        self.assertEqual(band.count, 3)
