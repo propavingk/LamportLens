@@ -6,3 +6,12 @@ import io
 import json
 import unittest
 from pathlib import Path
+
+from lamportlens.cli import main
+
+SAMPLES = Path(__file__).resolve().parents[1] / "samples"
+
+
+def run(args: list[str]) -> tuple[int, str]:
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
