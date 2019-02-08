@@ -56,3 +56,12 @@ class SnapshotTests(unittest.TestCase):
     def test_zero_byte_band(self):
         band = next(b for b in self.report.bands if b.label == "0 bytes")
         self.assertEqual(band.count, 3)
+        self.assertEqual(band.locked, 3 * 810_624)
+
+    def test_executable_accounts_are_not_in_bands(self):
+        total_banded = sum(b.count for b in self.report.bands)
+        self.assertEqual(total_banded, self.report.record_count - 2)
+
+    def test_system_owner_summary(self):
+        owner = self.report.owners["11111111111111111111111111111111"]
+        self.assertEqual(owner.accounts, 2)
