@@ -33,3 +33,12 @@ class ExitCodeTests(unittest.TestCase):
     def test_broken_lines_exit_one_with_parse_errors(self):
         code, output = run(["audit", str(SAMPLES / "broken-lines.jsonl")])
         self.assertEqual(code, 1)
+        self.assertIn("records: 2", output)
+        self.assertIn("parse errors: 7", output)
+
+    def test_missing_input_exits_two(self):
+        with self.assertRaises(SystemExit) as caught:
+            run(["audit", str(SAMPLES / "nope.jsonl")])
+        self.assertEqual(caught.exception.code, 2)
+
+    def test_version_exits_zero(self):
