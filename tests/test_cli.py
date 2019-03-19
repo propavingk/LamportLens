@@ -24,3 +24,12 @@ class ExitCodeTests(unittest.TestCase):
         code, output = run(["audit", str(SAMPLES / "clean-snapshot.jsonl")])
         self.assertEqual(code, 0)
         self.assertIn("FINDINGS: 0", output)
+
+    def test_snapshot_exits_one(self):
+        code, output = run(["audit", str(SAMPLES / "snapshot.jsonl")])
+        self.assertEqual(code, 1)
+        self.assertIn("FINDINGS: 3", output)
+
+    def test_broken_lines_exit_one_with_parse_errors(self):
+        code, output = run(["audit", str(SAMPLES / "broken-lines.jsonl")])
+        self.assertEqual(code, 1)
