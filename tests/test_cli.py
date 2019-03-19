@@ -42,3 +42,12 @@ class ExitCodeTests(unittest.TestCase):
         self.assertEqual(caught.exception.code, 2)
 
     def test_version_exits_zero(self):
+        with self.assertRaises(SystemExit) as caught:
+            run(["--version"])
+        self.assertEqual(caught.exception.code, 0)
+
+
+class FormatTests(unittest.TestCase):
+    def test_json_shape(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
