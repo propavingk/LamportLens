@@ -51,3 +51,12 @@ class FormatTests(unittest.TestCase):
     def test_json_shape(self):
         buffer = io.StringIO()
         with contextlib.redirect_stdout(buffer):
+            code = main(["audit", str(SAMPLES / "snapshot.jsonl"), "--format", "json"])
+        self.assertEqual(code, 1)
+        payload = json.loads(buffer.getvalue())
+        self.assertEqual(payload["records"], 44)
+        self.assertEqual(payload["findings"], 3)
+        self.assertEqual(payload["lamports_per_byte"], 6333)
+        self.assertEqual(len(payload["underfunded"]), 3)
+        self.assertEqual(len(payload["bands"]), 7)
+        self.assertIn("totals", payload)
