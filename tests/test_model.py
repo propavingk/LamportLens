@@ -46,3 +46,13 @@ class ParseRecordTests(unittest.TestCase):
             parse_record(
                 {
                     "address": "A",
+                    "lamports": 1,
+                    "data_len": 10_485_761,
+                    "owner": "O",
+                },
+                3,
+            )
+
+    def test_string_lamports_is_rejected(self):
+        with self.assertRaises(FormatError):
+            parse_record(
