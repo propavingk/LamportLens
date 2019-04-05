@@ -14,3 +14,12 @@ from lamportlens.rent import (
     STATUS_UNDERFUNDED,
     assess,
     minimum_balance,
+)
+
+
+def record(lamports: int, data_len: int, executable: bool = False) -> AccountRecord:
+    return AccountRecord(
+        address="A" * 44,
+        lamports=lamports,
+        data_len=data_len,
+        owner="O" * 44,
