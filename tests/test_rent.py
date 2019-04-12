@@ -41,3 +41,12 @@ class MinimumBalanceTests(unittest.TestCase):
         # 2,039,280 at the historical rate.
         self.assertEqual(minimum_balance(165), 1_855_569)
         self.assertEqual(minimum_balance(165, 6960), 2_039_280)
+
+    def test_presets_are_ordered(self):
+        self.assertEqual(RATE_PRESETS["historical"], 6960)
+        self.assertEqual(RATE_PRESETS["simd-0437-1"], 6333)
+        self.assertEqual(RATE_PRESETS["salvage"], 696)
+
+    def test_invalid_inputs_raise(self):
+        with self.assertRaises(ValueError):
+            minimum_balance(-1)
