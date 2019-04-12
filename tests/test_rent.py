@@ -23,3 +23,12 @@ def record(lamports: int, data_len: int, executable: bool = False) -> AccountRec
         lamports=lamports,
         data_len=data_len,
         owner="O" * 44,
+        executable=executable,
+        line=1,
+    )
+
+
+class MinimumBalanceTests(unittest.TestCase):
+    def test_default_rate_is_the_mainnet_step(self):
+        self.assertEqual(DEFAULT_LAMPORTS_PER_BYTE, 6333)
+
