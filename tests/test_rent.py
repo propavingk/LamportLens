@@ -32,3 +32,12 @@ class MinimumBalanceTests(unittest.TestCase):
     def test_default_rate_is_the_mainnet_step(self):
         self.assertEqual(DEFAULT_LAMPORTS_PER_BYTE, 6333)
 
+    def test_zero_byte_accounts(self):
+        self.assertEqual(minimum_balance(0), 810_624)
+        self.assertEqual(minimum_balance(0, 6960), 890_880)
+
+    def test_token_account_size(self):
+        # (128 + 165) * 6333 = 1,855,569 at the current step, and the familiar
+        # 2,039,280 at the historical rate.
+        self.assertEqual(minimum_balance(165), 1_855_569)
+        self.assertEqual(minimum_balance(165, 6960), 2_039_280)
