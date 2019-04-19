@@ -17,3 +17,10 @@ upgradeable loader. Account addresses are clearly patterned fakes built from
 the string `FixTure` plus an index; no real account is represented.
 
 ## clean-snapshot.jsonl
+
+12 records. Ten SPL token accounts of 165 bytes holding 2,500,000 lamports
+each, one zero-byte system account holding 9,000,000 lamports, and one
+executable program account. Everything non-executable is comfortably above
+its minimum at the default rate, so the audit reports zero findings and the
+exit code is 0. This fixture exists to show what a healthy snapshot looks
+like, and to give the CLI an exit-0 case.
