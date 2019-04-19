@@ -24,3 +24,9 @@ executable program account. Everything non-executable is comfortably above
 its minimum at the default rate, so the audit reports zero findings and the
 exit code is 0. This fixture exists to show what a healthy snapshot looks
 like, and to give the CLI an exit-0 case.
+
+## snapshot.jsonl
+
+44 records built to exercise every status at the default rate of 6,333
+lamports per byte:
+
