@@ -37,3 +37,9 @@ lamports per byte:
 | token account 1,000 lamports above the minimum | 1 | barely-above |
 | token account at 1,600,000 and 1,200,000 | 2 | underfunded |
 | zero-byte accounts at 890,880, at 810,624, and at 700,000 | 3 | funded, at-minimum, underfunded respectively |
+| a 1 MB mint account and a 2.5 MB program data account | 2 | the large end of the bands |
+| mid-size accounts in the 100-999 and 1k-9.9k bands | 16 | band coverage, balances computed to stay funded |
+| executable programs | 2 | the excluded bucket |
+| assorted small accounts | 3 | owner spread |
+
+Expected result: 3 underfunded accounts with deficits 255,569, 655,569 and
