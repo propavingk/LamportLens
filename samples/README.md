@@ -30,3 +30,10 @@ like, and to give the CLI an exit-0 case.
 44 records built to exercise every status at the default rate of 6,333
 lamports per byte:
 
+| Group | Count | What it exercises |
+|---|---|---|
+| token accounts at 2,039,280 lamports | 10 | funded under the current rate, exactly at the historical minimum |
+| token accounts at exactly the current minimum (1,855,569) | 5 | at-minimum |
+| token account 1,000 lamports above the minimum | 1 | barely-above |
+| token account at 1,600,000 and 1,200,000 | 2 | underfunded |
+| zero-byte accounts at 890,880, at 810,624, and at 700,000 | 3 | funded, at-minimum, underfunded respectively |
