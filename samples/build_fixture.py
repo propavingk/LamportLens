@@ -33,3 +33,14 @@ ASSOCIATED = "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
 LOADER = "BPFLoaderUpgradeab1e11111111111111111111111"
 
 TOKEN_ACCOUNT_LEN = 165
+TOKEN_MIN = (128 + TOKEN_ACCOUNT_LEN) * 6333
+ZERO_MIN = 128 * 6333
+
+
+def address(index: int) -> str:
+    body = "AbCdEfGhJkMnPqRsTuVwXyZ123456789AbCdEf"
+    return ("FixTure" + f"{index:03d}" + body)[:44]
+
+
+def record(address_value, lamports, data_len, owner, executable=False):
+    obj = {
