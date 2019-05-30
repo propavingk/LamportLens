@@ -22,3 +22,14 @@ has a minimum of 128 * 6333 = 810,624 lamports. The historical rate (6960)
 gives the familiar 2,039,280 and 890,880 lamports for the same sizes.
 """
 from __future__ import annotations
+
+import json
+from pathlib import Path
+
+SYSTEM = "11111111111111111111111111111111"
+TOKEN = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+TOKEN_2022 = "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+ASSOCIATED = "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+LOADER = "BPFLoaderUpgradeab1e11111111111111111111111"
+
+TOKEN_ACCOUNT_LEN = 165
