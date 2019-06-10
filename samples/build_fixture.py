@@ -44,3 +44,13 @@ def address(index: int) -> str:
 
 def record(address_value, lamports, data_len, owner, executable=False):
     obj = {
+        "address": address_value,
+        "lamports": lamports,
+        "data_len": data_len,
+        "owner": owner,
+    }
+    if executable:
+        obj["executable"] = True
+    return obj
+
+
