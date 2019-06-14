@@ -65,3 +65,14 @@ def build_clean() -> list[dict]:
 
 def build_snapshot() -> list[dict]:
     records = []
+
+    # Ten SPL token accounts funded at the historical minimum, comfortably
+    # above the current one.
+    for i in range(10):
+        records.append(record(address(i), 2_039_280, TOKEN_ACCOUNT_LEN, TOKEN))
+
+    # Five token accounts at exactly the current minimum, and one barely above.
+    for i in range(10, 15):
+        records.append(record(address(i), TOKEN_MIN, TOKEN_ACCOUNT_LEN, TOKEN))
+    records.append(record(address(15), TOKEN_MIN + 1_000, TOKEN_ACCOUNT_LEN, TOKEN))
+
