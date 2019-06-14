@@ -54,3 +54,14 @@ def record(address_value, lamports, data_len, owner, executable=False):
     return obj
 
 
+def build_clean() -> list[dict]:
+    records = []
+    for i in range(10):
+        records.append(record(address(i), 2_500_000, TOKEN_ACCOUNT_LEN, TOKEN))
+    records.append(record(address(10), 9_000_000, 0, SYSTEM))
+    records.append(record(address(11), 500_000, 300_000, LOADER, executable=True))
+    return records
+
+
+def build_snapshot() -> list[dict]:
+    records = []
