@@ -76,3 +76,14 @@ def build_snapshot() -> list[dict]:
         records.append(record(address(i), TOKEN_MIN, TOKEN_ACCOUNT_LEN, TOKEN))
     records.append(record(address(15), TOKEN_MIN + 1_000, TOKEN_ACCOUNT_LEN, TOKEN))
 
+    # Two token accounts underfunded against the current rate.
+    records.append(record(address(16), 1_600_000, TOKEN_ACCOUNT_LEN, TOKEN))
+    records.append(record(address(17), 1_200_000, TOKEN_ACCOUNT_LEN, TOKEN_2022))
+
+    # Zero-byte system accounts: one funded at the historical minimum, one at
+    # exactly the current minimum, one underfunded.
+    records.append(record(address(18), 890_880, 0, SYSTEM))
+    records.append(record(address(19), ZERO_MIN, 0, SYSTEM))
+    records.append(record(address(20), 700_000, 0, ASSOCIATED))
+
+    # A large mint account and a large program data account, both funded
