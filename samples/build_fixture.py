@@ -98,3 +98,14 @@ def build_snapshot() -> list[dict]:
         data_len = 300 + (i - 23) * 20
         records.append(record(address(i), (128 + data_len) * 6333 + 500_000, data_len, TOKEN))
     for i in range(31, 39):
+        data_len = 2_000 + (i - 31) * 100
+        records.append(record(address(i), (128 + data_len) * 6333 + 2_000_000, data_len, TOKEN_2022))
+
+    # Two executable programs, excluded from the rent comparison.
+    records.append(record(address(39), 1_000, 400_000, LOADER, executable=True))
+    records.append(record(address(40), 1_000, 800_000, LOADER, executable=True))
+
+    # Two more funded accounts and one at-minimum, to give the owner table
+    # some spread across owners.
+    records.append(record(address(41), 8_000_000, 82, ASSOCIATED))
+    records.append(record(address(42), 8_500_000, 82, ASSOCIATED))
