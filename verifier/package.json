@@ -6,3 +6,5 @@
   "description": "Independent TypeScript verifier for the lamportlens rent arithmetic.",
   "scripts": {
     "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test dist/*.test.js"
