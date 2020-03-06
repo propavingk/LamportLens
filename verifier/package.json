@@ -3,3 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "Independent TypeScript verifier for the lamportlens rent arithmetic.",
+  "scripts": {
+    "build": "tsc",
