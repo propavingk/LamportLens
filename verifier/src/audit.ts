@@ -9,3 +9,14 @@ import {
   STATUS_AT_MINIMUM,
   STATUS_BARELY_ABOVE,
   STATUS_EXCLUDED,
+  STATUS_FUNDED,
+  STATUS_UNDERFUNDED,
+  assess,
+  minimumBalance,
+} from "./rent.js";
+
+export const BANDS: Array<[string, number, number]> = [
+  ["0 bytes", 0, 0],
+  ["1-99", 1, 99],
+  ["100-999", 100, 999],
+  ["1k-9.9k", 1_000, 9_999],
