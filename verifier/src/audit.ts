@@ -66,3 +66,15 @@ export function audit(
     statusCounts[status] = (statusCounts[status] ?? 0) + 1;
     const minimum = minimumBalance(record.dataLen, lamportsPerByte);
     if (status === STATUS_UNDERFUNDED) {
+      const deficit = minimum - record.lamports;
+      totals.deficit += deficit;
+      underfunded.push({
+        address: record.address,
+        owner: record.owner,
+        lamports: record.lamports,
+        minimum,
+        deficit,
+      });
+    }
+    if (status !== STATUS_EXCLUDED) {
+      totals.locked += minimum;
