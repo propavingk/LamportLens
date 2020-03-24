@@ -6,3 +6,12 @@ import { AccountRecord, MAX_ACCOUNT_DATA_LEN } from "./rent.js";
 
 export interface ParseError {
   line: number;
+  message: string;
+}
+
+function requireNonEmptyString(obj: Record<string, unknown>, key: string, line: number): string {
+  if (!(key in obj)) throw new FormatError(`line ${line}: missing required field '${key}'`);
+  const value = obj[key];
+  if (typeof value !== "string" || value.length === 0) {
+    throw new FormatError(`line ${line}: field '${key}' must be a non-empty string`);
+  }
