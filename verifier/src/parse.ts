@@ -40,3 +40,12 @@ function requireInteger(
 export class FormatError extends Error {}
 
 export function parseRecord(value: unknown, line: number): AccountRecord {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    throw new FormatError(`line ${line}: record must be a JSON object`);
+  }
+  const obj = value as Record<string, unknown>;
+  const address = requireNonEmptyString(obj, "address", line);
+  const lamports = requireInteger(obj, "lamports", line, 0);
+  const dataLen = requireInteger(obj, "data_len", line, 0, MAX_ACCOUNT_DATA_LEN);
+  const owner = requireNonEmptyString(obj, "owner", line);
+  let executable = false;
