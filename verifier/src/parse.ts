@@ -32,3 +32,11 @@ function requireInteger(
   }
   if (value < minimum) throw new FormatError(`line ${line}: field '${key}' must be >= ${minimum}`);
   if (maximum !== undefined && value > maximum) {
+    throw new FormatError(`line ${line}: field '${key}' must be <= ${maximum}`);
+  }
+  return value;
+}
+
+export class FormatError extends Error {}
+
+export function parseRecord(value: unknown, line: number): AccountRecord {
