@@ -15,3 +15,11 @@ function requireNonEmptyString(obj: Record<string, unknown>, key: string, line: 
   if (typeof value !== "string" || value.length === 0) {
     throw new FormatError(`line ${line}: field '${key}' must be a non-empty string`);
   }
+  return value;
+}
+
+function requireInteger(
+  obj: Record<string, unknown>,
+  key: string,
+  line: number,
+  minimum: number,
