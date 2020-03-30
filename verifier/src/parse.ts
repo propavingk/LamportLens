@@ -58,3 +58,11 @@ export function parseRecord(value: unknown, line: number): AccountRecord {
   return { address, lamports, dataLen, owner, executable, line };
 }
 
+export function parseText(text: string): { records: AccountRecord[]; errors: ParseError[] } {
+  const records: AccountRecord[] = [];
+  const errors: ParseError[] = [];
+  const lines = text.split(/\r?\n/);
+  for (let index = 0; index < lines.length; index += 1) {
+    const raw = lines[index];
+    if (raw.trim() === "") continue;
+    const number = index + 1;
