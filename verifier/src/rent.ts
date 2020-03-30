@@ -9,3 +9,10 @@ export const ACCOUNT_STORAGE_OVERHEAD = 128;
 export const RATE_PRESETS: Record<string, number> = {
   salvage: 696,
   "simd-0437-5": 696,
+  "simd-0437-4": 1322,
+  "simd-0437-3": 2575,
+  "simd-0437-2": 5080,
+  "simd-0437-1": 6333,
+  "simd-0194": 6960,
+  historical: 6960,
+};
