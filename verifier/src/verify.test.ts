@@ -34,3 +34,10 @@ test("status classification", () => {
   assert.equal(assess(record(815_000, 0)), "barely-above");
   assert.equal(assess(record(2_500_000, 0)), "funded");
   assert.equal(assess(record(1, 400_000, true)), "executable-excluded");
+});
+
+test("clean snapshot has no findings", () => {
+  const result = auditText(sample("clean-snapshot.jsonl"));
+  assert.equal(result.records, 12);
+  assert.equal(result.findings, 0);
+  assert.equal(result.statusCounts["funded"], 11);
