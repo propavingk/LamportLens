@@ -19,3 +19,10 @@ function sample(name: string): string {
 
 function record(lamports: number, dataLen: number, executable = false): AccountRecord {
   return { address: "A".repeat(44), lamports, dataLen, owner: "O".repeat(44), executable, line: 1 };
+}
+
+test("formula anchors", () => {
+  assert.equal(minimumBalance(0), 810_624);
+  assert.equal(minimumBalance(165), 1_855_569);
+  assert.equal(minimumBalance(0, 6960), 890_880);
+  assert.equal(minimumBalance(165, 6960), 2_039_280);
