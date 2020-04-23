@@ -41,3 +41,10 @@ test("clean snapshot has no findings", () => {
   assert.equal(result.records, 12);
   assert.equal(result.findings, 0);
   assert.equal(result.statusCounts["funded"], 11);
+  assert.equal(result.statusCounts["executable-excluded"], 1);
+});
+
+test("snapshot counts match the designed fixture", () => {
+  const result = auditText(sample("snapshot.jsonl"));
+  assert.equal(result.records, 44);
+  assert.equal(result.findings, 3);
