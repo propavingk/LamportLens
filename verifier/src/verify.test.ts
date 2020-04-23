@@ -26,3 +26,11 @@ test("formula anchors", () => {
   assert.equal(minimumBalance(165), 1_855_569);
   assert.equal(minimumBalance(0, 6960), 890_880);
   assert.equal(minimumBalance(165, 6960), 2_039_280);
+});
+
+test("status classification", () => {
+  assert.equal(assess(record(800_000, 0)), "underfunded");
+  assert.equal(assess(record(810_624, 0)), "at-minimum");
+  assert.equal(assess(record(815_000, 0)), "barely-above");
+  assert.equal(assess(record(2_500_000, 0)), "funded");
+  assert.equal(assess(record(1, 400_000, true)), "executable-excluded");
