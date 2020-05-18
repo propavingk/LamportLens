@@ -15,3 +15,12 @@ import { DEFAULT_LAMPORTS_PER_BYTE, RATE_PRESETS } from "./rent.js";
 function main(argv: string[]): number {
   const args = argv.slice(2);
   let path: string | null = null;
+  let lamportsPerByte: number | null = null;
+  let preset: string | null = null;
+
+  for (let i = 0; i < args.length; i += 1) {
+    const arg = args[i];
+    if (arg === "--lamports-per-byte") {
+      lamportsPerByte = Number(args[++i]);
+    } else if (arg === "--preset") {
+      preset = args[++i] ?? null;
