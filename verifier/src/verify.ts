@@ -43,3 +43,12 @@ function main(argv: string[]): number {
       process.stderr.write("verify: lamports-per-byte must be a positive integer\n");
       return 2;
     }
+    rate = lamportsPerByte;
+  } else if (preset !== null) {
+    const value = RATE_PRESETS[preset];
+    if (value === undefined) {
+      process.stderr.write("verify: unknown preset " + preset + "\n");
+      return 2;
+    }
+    rate = value;
+  }
