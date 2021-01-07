@@ -13,3 +13,8 @@ assignees: ""
 **Reproduce**
 
 Command:
+
+```bash
+PYTHONPATH=src python -m lamportlens audit path/to/snapshot.jsonl
+```
+
