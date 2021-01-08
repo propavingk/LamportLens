@@ -18,3 +18,9 @@ Command:
 PYTHONPATH=src python -m lamportlens audit path/to/snapshot.jsonl
 ```
 
+Smallest snapshot that shows it (two or three JSONL lines are usually enough):
+
+```jsonl
+
+```
+
