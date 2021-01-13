@@ -24,3 +24,9 @@ Smallest snapshot that shows it (two or three JSONL lines are usually enough):
 
 ```
 
+**Real output**
+
+Paste the output verbatim, including the `FINDINGS:` line:
+
+```
+
