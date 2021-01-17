@@ -3,3 +3,4 @@ contact_links:
   - name: Format contract
     url: https://example.invalid/lamportlens/docs/FORMAT.md
     about: Input fields, validation rules, report fields and exit codes
+  - name: Rate schedule
