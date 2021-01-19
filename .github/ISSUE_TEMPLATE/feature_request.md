@@ -4,3 +4,6 @@ about: Suggest a report field, an aggregate, or a workflow improvement
 title: ""
 labels: enhancement
 assignees: ""
+---
+
+**What decision would this feature inform**
