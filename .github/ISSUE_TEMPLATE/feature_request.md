@@ -14,3 +14,7 @@ decide Y" is more useful than a field name.
 **Proposed behavior**
 
 **Does it change the arithmetic or the contract**
+
+- [ ] New report field only (additive, no rule change)
+- [ ] Changes a rule or an aggregate (requires both engines and parity)
+- [ ] Changes the input format
