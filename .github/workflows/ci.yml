@@ -3,3 +3,10 @@ name: CI
 on:
   push:
     branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: Python (tests and verify)
+    runs-on: ubuntu-latest
+    steps:
