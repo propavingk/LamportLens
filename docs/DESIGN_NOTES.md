@@ -15,3 +15,11 @@ class of rounding question the network is deleting.
 Rejected alternative: compute with floats for readability. It buys nothing,
 and it makes `at-minimum` comparisons unreliable at the boundary, which is the
 comparison the tool exists to make.
+
+## Executable accounts are excluded, not special-cased
+
+Program accounts held by the loader do not follow the account rent rule the
+same way, so the audit puts them in their own status and leaves them out of
+bands, totals and owner locked sums. The alternative, reporting them as
+underfunded because their lamports are below the formula, would fill the
+report with thousands of findings that no operator can or should act on.
