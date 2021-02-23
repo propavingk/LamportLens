@@ -31,3 +31,11 @@ why it is a status in the report and a subtraction in the band totals.
 
 An account within one percent of its minimum is treated as held purely for the
 bond. The alternative thresholds were 1.0 (only exactly-at-minimum counts,
+which misses accounts sitting a few lamports above) and 1.05 (which starts
+calling genuinely funded accounts unspendable). One percent is coarse on
+purpose: the point is to give an operator a short list of closure candidates,
+not to model what a specific account can afford.
+
+## Band edges are fixed and printed
+
+Bands use round edges (0, 99, 999, 9,999, and so on) and the report prints
