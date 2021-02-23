@@ -23,3 +23,11 @@ same way, so the audit puts them in their own status and leaves them out of
 bands, totals and owner locked sums. The alternative, reporting them as
 underfunded because their lamports are below the formula, would fill the
 report with thousands of findings that no operator can or should act on.
+
+The cost of the decision is that the excluded count must be visible, which is
+why it is a status in the report and a subtraction in the band totals.
+
+## The barely-above ratio is 1.01
+
+An account within one percent of its minimum is treated as held purely for the
+bond. The alternative thresholds were 1.0 (only exactly-at-minimum counts,
