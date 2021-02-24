@@ -39,3 +39,10 @@ not to model what a specific account can afford.
 ## Band edges are fixed and printed
 
 Bands use round edges (0, 99, 999, 9,999, and so on) and the report prints
+them, because the interesting question is almost always "which order of
+magnitude holds my storage bond". The alternative, adaptive buckets, makes two
+reports of the same program incomparable after any change in the data, which
+defeats the diffing workflow this tool is built for.
+
+## Largest deficit first
+
