@@ -46,3 +46,11 @@ defeats the diffing workflow this tool is built for.
 
 ## Largest deficit first
 
+The underfunded list is sorted by deficit descending, then address. When a
+snapshot has one mis-sized large account and fifty small ones, the large one
+is the actionable item, and it belongs at the top. The alternative, address
+order, is stable and useless: nobody reads the first seventeen characters of
+a base58 address and decides anything.
+
+## Two implementations, no shared code
+
