@@ -62,3 +62,11 @@ actually happens when arithmetic moves between languages. The parity script
 compares every number that matters, and it has already caught one real
 disagreement (sort order of the underfunded list).
 
+## Lamports are never converted
+
+The report prints lamports, raw. No SOL figure, no dollar figure, no
+thousands separators in the machine-readable output. Unit conversion is where
+reporting tools lose trust: a reader who sees "2.04 SOL" has to wonder which
+rate, which rounding, and which decimal separator. The alternative was to
+print SOL alongside; the honest version of that is a calculator, and every
+reader already has one.
