@@ -70,3 +70,11 @@ reporting tools lose trust: a reader who sees "2.04 SOL" has to wonder which
 rate, which rounding, and which decimal separator. The alternative was to
 print SOL alongside; the honest version of that is a calculator, and every
 reader already has one.
+
+## The rate is an input, not a constant
+
+The rent-exempt rate changes with network upgrades, and the tool treats it as
+a parameter with a dated default rather than baking it into the arithmetic.
+The alternative, a single hardcoded constant, would silently reinterpret old
+snapshots the day the network activates the next SIMD-0437 step. Because the
+rate is a parameter, an old snapshot can be re-audited under both rates, which
