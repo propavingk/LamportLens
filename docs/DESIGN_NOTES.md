@@ -54,3 +54,11 @@ a base58 address and decides anything.
 
 ## Two implementations, no shared code
 
+Python and TypeScript read the same contract and implement the same rules
+independently. The alternative, one implementation plus generated bindings,
+preserves bugs with the same fidelity as behavior; two readings of the same
+written rules catch interpretation errors, which is the class of defect that
+actually happens when arithmetic moves between languages. The parity script
+compares every number that matters, and it has already caught one real
+disagreement (sort order of the underfunded list).
+
