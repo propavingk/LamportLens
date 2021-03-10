@@ -39,3 +39,16 @@ Every invalid line is collected with its line number and reported under
 | missing `lamports` | `line N: missing required field 'lamports'` |
 | non-integer or negative `lamports` | `line N: field 'lamports' must be an integer` / `must be >= 0` |
 | `data_len` over 10 MiB | `line N: field 'data_len' must be <= 10485760` |
+| missing `owner` | `line N: missing required field 'owner'` |
+| non-boolean `executable` | `line N: field 'executable' must be a boolean` |
+
+## Deterministic rules
+
+These rules are implemented twice, once per language, and the parity script
+asserts that both implementations agree on every fixture.
+
+### The arithmetic
+
+```
+minimum = (128 + data_len) * lamports_per_byte
+```
