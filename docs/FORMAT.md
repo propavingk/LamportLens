@@ -52,3 +52,15 @@ asserts that both implementations agree on every fixture.
 ```
 minimum = (128 + data_len) * lamports_per_byte
 ```
+
+Integer only. `lamports_per_byte` is resolved by the CLI: explicit flag, then
+preset, then the documented default. See `docs/RATE_SCHEDULE.md` for the
+steps and their dates.
+
+### Status classification
+
+| Status | Condition |
+|---|---|
+| `executable-excluded` | the record is an executable program account; excluded from the rent comparison |
+| `underfunded` | `lamports < minimum` |
+| `at-minimum` | `lamports == minimum` |
