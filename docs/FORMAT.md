@@ -27,3 +27,15 @@ claiming otherwise has an exporter bug.
 
 ### Validation errors
 
+Every invalid line is collected with its line number and reported under
+`PARSE ERRORS`. Parsing continues. The observed error messages are:
+
+| Condition | Message |
+|---|---|
+| not a JSON object | `line N: record must be a JSON object` |
+| JSON syntax error | `line N: invalid JSON (...)` |
+| missing `address` | `line N: missing required field 'address'` |
+| empty `address` | `line N: field 'address' must be a non-empty string` |
+| missing `lamports` | `line N: missing required field 'lamports'` |
+| non-integer or negative `lamports` | `line N: field 'lamports' must be an integer` / `must be >= 0` |
+| `data_len` over 10 MiB | `line N: field 'data_len' must be <= 10485760` |
