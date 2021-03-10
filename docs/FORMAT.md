@@ -64,3 +64,16 @@ steps and their dates.
 | `executable-excluded` | the record is an executable program account; excluded from the rent comparison |
 | `underfunded` | `lamports < minimum` |
 | `at-minimum` | `lamports == minimum` |
+| `barely-above` | `minimum < lamports <= floor(minimum * 1.01)` |
+| `funded` | `lamports > floor(minimum * 1.01)` |
+
+Executable accounts are excluded because the loader holds programs and the
+account rent rule does not apply to them the same way. Counting them would
+manufacture findings at scale. The ratio 1.01 exists so that an account
+holding a token 1,000 lamports above its bond is not reported as fully funded
+when it cannot meaningfully spend that margin.
+
+### Aggregates
+
+| Aggregate | Definition |
+|---|---|
