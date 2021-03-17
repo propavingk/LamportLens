@@ -127,3 +127,16 @@ a cut list always prints how many entries were omitted.
 ## JSON report
 
 `audit --format json` prints one object. Field by field:
+
+| Field | Type | Meaning |
+|---|---|---|
+| `input` | string | the path as given on the command line |
+| `records` | int | accepted records |
+| `lamports_per_byte` | int | the resolved rate |
+| `findings` | int | underfunded accounts plus parse errors |
+| `status_counts` | object | one key per status, in fixed order |
+| `totals.locked` | int | total bond |
+| `totals.balance` | int | total balance observed |
+| `totals.deficit` | int | total deficit |
+| `totals.reclaimable` | int | balance in at-minimum and barely-above accounts |
+| `underfunded` | array | objects with `address`, `owner`, `lamports`, `minimum`, `deficit`; largest deficit first |
