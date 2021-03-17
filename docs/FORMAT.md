@@ -77,3 +77,15 @@ when it cannot meaningfully spend that margin.
 
 | Aggregate | Definition |
 |---|---|
+| `locked` | the sum of `minimum` over every non-excluded account, the total bond the snapshot represents |
+| `balance` | the sum of `lamports` over every non-excluded account |
+| `deficit` | for each underfunded account, `minimum - lamports`, summed |
+| `reclaimable` | the sum of `lamports` over accounts whose status is `at-minimum` or `barely-above`; closing these returns the full balance, before fees |
+
+### Bands
+
+Data length bands, fixed edges:
+
+| Band | `data_len` range |
+|---|---|
+| `0 bytes` | 0 |
