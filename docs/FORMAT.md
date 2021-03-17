@@ -114,3 +114,16 @@ The `audit` command prints, in order:
 |---|---|
 | header | tool name, input path, records, rate used, parse error count |
 | `STATUS COUNTS` | one line per status in fixed order |
+| `TOTALS` | locked, balances observed, underfunded deficit, reclaimable |
+| `UNDERFUNDED` | the first N, largest deficit first, with owner and deficit |
+| `BANDS` | every band with account count and locked lamports |
+| `OWNERS` | top five by locked lamports |
+| `PARSE ERRORS` | the first N error messages verbatim |
+| `FINDINGS` | the total count used for the exit code |
+
+N defaults to 10 and is set by `--limit`. Lists are never silently truncated:
+a cut list always prints how many entries were omitted.
+
+## JSON report
+
+`audit --format json` prints one object. Field by field:
