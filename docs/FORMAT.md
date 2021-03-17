@@ -89,3 +89,16 @@ Data length bands, fixed edges:
 | Band | `data_len` range |
 |---|---|
 | `0 bytes` | 0 |
+| `1-99` | 1 to 99 |
+| `100-999` | 100 to 999 |
+| `1k-9.9k` | 1,000 to 9,999 |
+| `10k-99k` | 10,000 to 99,999 |
+| `100k-999k` | 100,000 to 999,999 |
+| `1M and above` | 1,000,000 to 10,485,760 |
+
+Excluded accounts are not counted in any band, so band counts sum to
+`records - excluded`.
+
+### Owner summaries
+
+Per `owner`: account count, underfunded count, `locked` (sum of minima over
