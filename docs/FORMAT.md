@@ -102,3 +102,15 @@ Excluded accounts are not counted in any band, so band counts sum to
 ### Owner summaries
 
 Per `owner`: account count, underfunded count, `locked` (sum of minima over
+non-excluded accounts) and `balance` (sum of lamports over non-excluded
+accounts). The report ranks owners by `locked` descending, then by account
+count, then by owner string.
+
+## Text report
+
+The `audit` command prints, in order:
+
+| Section | Content |
+|---|---|
+| header | tool name, input path, records, rate used, parse error count |
+| `STATUS COUNTS` | one line per status in fixed order |
