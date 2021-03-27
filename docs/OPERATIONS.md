@@ -26,3 +26,12 @@ Whatever you use to produce it, the rules are:
    week.
 
 For a token program owned by a single mint, an export of the mint account and
+its token accounts is usually all you need: those are the accounts whose bonds
+dominate the totals in most programs.
+
+## Running an audit
+
+```bash
+# mainnet rate at the time of writing
+lamportlens audit snapshot.jsonl
+
