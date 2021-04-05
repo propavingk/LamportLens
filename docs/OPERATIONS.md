@@ -35,3 +35,12 @@ dominate the totals in most programs.
 # mainnet rate at the time of writing
 lamportlens audit snapshot.jsonl
 
+# against the historical rate, to see what the old bond would have been
+lamportlens audit snapshot.jsonl --preset historical
+
+# machine-readable, for a dashboard or a gate
+lamportlens audit snapshot.jsonl --format json --output report.json
+```
+
+Exit codes make the tool usable as a CI gate without parsing anything: 0 when
+every account is exempt, 1 when underfunded accounts or parse errors exist, 2
