@@ -44,3 +44,12 @@ lamportlens audit snapshot.jsonl --format json --output report.json
 
 Exit codes make the tool usable as a CI gate without parsing anything: 0 when
 every account is exempt, 1 when underfunded accounts or parse errors exist, 2
+for usage problems. A job that fails on exit 1 is a job that fails when the
+data is wrong.
+
+## Reading the report
+
+The report answers four questions in order.
+
+**How bad is it right now?** The `STATUS COUNTS` section. `underfunded` is
+the number that matters; `executable-excluded` is bookkeeping.
