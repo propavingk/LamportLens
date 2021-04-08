@@ -53,3 +53,11 @@ The report answers four questions in order.
 
 **How bad is it right now?** The `STATUS COUNTS` section. `underfunded` is
 the number that matters; `executable-excluded` is bookkeeping.
+
+**How much is actually missing?** The `TOTALS` section. `deficit` is the
+amount that must be added to bring every underfunded account to its minimum.
+`locked` is the total bond the snapshot represents, which is the number to
+compare between snapshots.
+
+**Where is it?** The `UNDERFUNDED` list, largest deficit first. A single
+mis-sized large account usually dominates the total, and it is worth fixing
