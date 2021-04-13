@@ -70,3 +70,12 @@ pays off.
 ## Remediation playbook
 
 | Status | What it means | Action |
+|---|---|---|
+| `underfunded` | the account holds less than its bond and is at risk under rent collection | top it up to `minimum`, or close it if unused |
+| `at-minimum` | funded exactly to the bond, nothing spendable | keep if used, close if not; the full balance returns on close |
+| `barely-above` | within one percent of the bond, effectively unspendable | decide between topping up for real use or closing |
+| `funded` | holds meaningfully more than the bond | normal |
+| `executable-excluded` | a program account, outside the rent rule | no action from this tool |
+
+Two practical notes. Closing an account is a transaction and costs fees the
+tool does not model; the `reclaimable` total is gross, before costs. And a
