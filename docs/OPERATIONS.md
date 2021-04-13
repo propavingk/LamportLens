@@ -61,3 +61,12 @@ compare between snapshots.
 
 **Where is it?** The `UNDERFUNDED` list, largest deficit first. A single
 mis-sized large account usually dominates the total, and it is worth fixing
+before fifty small ones.
+
+**Who holds the storage?** The `BANDS` and `OWNERS` sections. In most
+programs one band and one owner dominate, and that is where a closure sweep
+pays off.
+
+## Remediation playbook
+
+| Status | What it means | Action |
