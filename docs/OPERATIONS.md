@@ -79,3 +79,12 @@ pays off.
 
 Two practical notes. Closing an account is a transaction and costs fees the
 tool does not model; the `reclaimable` total is gross, before costs. And a
+top-up is cheap to compute but easy to get wrong by one lamport: use the
+`minimum` value from the JSON output rather than recomputing by hand.
+
+## Rates change the answer
+
+The default rate is the SIMD-0437 step live on mainnet. When the network
+activates the next step, the same snapshot reports different deficits and
+different reclaimable balances, because the bond shrinks. That is not a bug in
+the tool and not a change in the accounts. Two habits keep this sane:
