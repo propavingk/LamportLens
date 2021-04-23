@@ -35,3 +35,11 @@ The default in `src/lamportlens/rent.py` is 6,333, the step listed as live on
 mainnet at the time of writing. When the next step activates, changing the
 default is a release with a changelog entry, because snapshots audited before
 and after will report different deficits for the same accounts.
+
+## Minimum balances by size and step
+
+All values are lamports. Sizes are the real ones used on Solana: a token mint
+is 82 bytes, an SPL token account is 165 bytes, and a multisig account is 355
+bytes. The 0 byte row is the empty-account case that the fixtures use.
+
+| data_len | 6,960 | 6,333 | 5,080 | 2,575 | 1,322 | 696 |
