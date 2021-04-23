@@ -26,3 +26,12 @@ schedule starts there.
 |---|---|---|---|
 | historical (SIMD-0194 form) | 6,960 | superseded | the rate that produced the familiar 890,880 and 2,039,280 lamports |
 | SIMD-0437-1 | 6,333 | live on mainnet | active since mainnet epoch 1028, 2026-09-03 |
+| SIMD-0437-2 | 5,080 | live on testnet | testnet activation 2026-09-03, mainnet expected mid-September 2026 |
+| SIMD-0437-3 | 2,575 | queued | expected with Agave 4.4, November 2026 window |
+| SIMD-0437-4 | 1,322 | queued | expected with Agave 4.4, November 2026 window |
+| SIMD-0437-5 | 696 | queued | expected with Agave 4.4, late 2026 |
+
+The default in `src/lamportlens/rent.py` is 6,333, the step listed as live on
+mainnet at the time of writing. When the next step activates, changing the
+default is a release with a changelog entry, because snapshots audited before
+and after will report different deficits for the same accounts.
