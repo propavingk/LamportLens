@@ -52,3 +52,12 @@ bytes. The 0 byte row is the empty-account case that the fixtures use.
 | 10 MiB | 72,981,780,480 | 66,407,128,704 | 53,268,311,040 | 27,001,161,600 | 13,862,343,936 | 7,298,178,048 |
 
 10 MiB is Solana's maximum account data size (`MAX_ACCOUNT_DATA_LEN`), so the
+last row is the largest exemption any account can require.
+
+## Why the step history matters to an audit
+
+A snapshot is a point-in-time reading, and the minimum it is compared against
+depends on the rate that was live when the accounts were funded. Two examples
+from the fixtures:
+
+- An SPL token account holding 2,039,280 lamports is at exactly the minimum
