@@ -61,3 +61,12 @@ depends on the rate that was live when the accounts were funded. Two examples
 from the fixtures:
 
 - An SPL token account holding 2,039,280 lamports is at exactly the minimum
+  under the historical rate and comfortably funded under the current one. An
+  audit that used the wrong step would report either a false deficit or a
+  false sense of safety.
+- A zero-byte account holding 810,624 lamports is at exactly the current
+  minimum and underfunded by 80,256 lamports against the historical rate.
+
+That is why the rate is a required input to the arithmetic and why the report
+prints the rate it used on the header line. It is also why the class of
+accounts sitting just below 2,039,280 lamports is worth watching: they were
