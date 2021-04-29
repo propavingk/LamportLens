@@ -70,3 +70,11 @@ from the fixtures:
 That is why the rate is a required input to the arithmetic and why the report
 prints the rate it used on the header line. It is also why the class of
 accounts sitting just below 2,039,280 lamports is worth watching: they were
+funded to the old bond, and the current rate made part of that bond
+unnecessary, which makes them candidates for closure and recovery rather than
+maintenance.
+
+## Selecting a step
+
+```bash
+# the default, the step live on mainnet at the time of writing
