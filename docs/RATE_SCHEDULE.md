@@ -78,3 +78,12 @@ maintenance.
 
 ```bash
 # the default, the step live on mainnet at the time of writing
+lamportlens audit snapshot.jsonl
+
+# any named step
+lamportlens audit snapshot.jsonl --preset simd-0437-2
+
+# an explicit rate, for a private cluster or a test
+lamportlens audit snapshot.jsonl --lamports-per-byte 6960
+```
+
