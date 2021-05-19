@@ -16,3 +16,12 @@ behavior.
 `make test`, `make parity` and `make verify` wrap the same commands. CI runs
 all four.
 
+## Python unit tests
+
+| File | Covers |
+|---|---|
+| `tests/test_model.py` | every validation rule, error collection with line numbers, blank line handling, unknown key tolerance |
+| `tests/test_rent.py` | formula anchors at both rates, preset values, status classification including the executable exclusion |
+| `tests/test_audit.py` | designed status counts on both fixtures, deficit sum, band totals, owner summaries, reclaimable definition |
+| `tests/test_cli.py` | exit codes 0, 1 and 2, JSON shape, rate override changing findings, `bands` and `owners` subcommands |
+
