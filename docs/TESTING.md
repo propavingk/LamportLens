@@ -25,3 +25,12 @@ all four.
 | `tests/test_audit.py` | designed status counts on both fixtures, deficit sum, band totals, owner summaries, reclaimable definition |
 | `tests/test_cli.py` | exit codes 0, 1 and 2, JSON shape, rate override changing findings, `bands` and `owners` subcommands |
 
+The three underfunded accounts in the snapshot fixture are deliberate and
+their deficits are asserted exactly:
+
+```
+1,855,569 - 1,600,000 = 255,569
+1,855,569 - 1,200,000 = 655,569
+  810,624 -   700,000 = 110,624
+```
+
