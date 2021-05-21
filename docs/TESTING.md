@@ -34,3 +34,12 @@ their deficits are asserted exactly:
   810,624 -   700,000 = 110,624
 ```
 
+If a change to the arithmetic shifts any of these, the test fails with the
+real numbers in the message, which is the fastest possible diagnosis.
+
+## Verifier tests
+
+`verifier/src/verify.test.ts` runs with `node:test`, no test framework beyond
+the standard library. It asserts the same anchors as the Python suite
+(810,624 and 1,855,569 at the default rate, 890,880 and 2,039,280 at the
+historical rate), the same status classifications, and the same designed
