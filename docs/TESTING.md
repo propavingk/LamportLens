@@ -43,3 +43,13 @@ real numbers in the message, which is the fastest possible diagnosis.
 the standard library. It asserts the same anchors as the Python suite
 (810,624 and 1,855,569 at the default rate, 890,880 and 2,039,280 at the
 historical rate), the same status classifications, and the same designed
+counts on the shared fixtures under `samples/`.
+
+The verifier reads the same files the Python tests read. That is on purpose:
+two implementations disagreeing about the same bytes is the failure mode the
+parity check exists to catch.
+
+## Cross-engine parity
+
+`scripts/parity.py` runs both implementations, then compares:
+
