@@ -53,3 +53,12 @@ parity check exists to catch.
 
 `scripts/parity.py` runs both implementations, then compares:
 
+- record count and resolved rate;
+- every per-status count;
+- all four totals;
+- band account counts and locked lamports for every band;
+- the underfunded list, by address and deficit, in report order;
+- parse error counts and the findings total.
+
+A disagreement prints both values and fails the build. This is the check that
+caught the only real cross-engine defect so far: the TypeScript sort of the
