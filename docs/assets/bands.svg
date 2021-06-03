@@ -2,3 +2,8 @@
   <!-- palette: mint paper and pine ink; one copper accent on the band that holds almost the whole storage bond. contrast against #F2F7F3: pine #1C3A2E 11.4:1, slate #5F6F66 4.9:1, copper #8F6B12 4.5:1. all numbers come from running the CLI on samples/snapshot.jsonl at 6,333 lamports per byte. -->
   <title id="ll-bands-title">Accounts and locked lamports per data band</title>
   <desc id="ll-bands-desc">Seven rows, one per data length band. Bars show the account count in each band; the two right columns show the count and the lamports held as exemptions. The 1M and above band, two accounts, holds 22,167,121,248 lamports and carries the copper accent. The 100-999 band holds 58,630,914 lamports across 26 accounts, and the 1k-9.9k band holds 125,545,392 across 8.</desc>
+  <rect width="640" height="184" fill="#F2F7F3"/>
+  <text x="16" y="26" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#1C3A2E">lamportlens: accounts and locked lamports by data band</text>
+
+  <g font-family='"Cascadia Mono", "JetBrains Mono", Consolas, monospace' font-size="11" fill="#5F6F66">
+    <text x="112" y="44">accounts</text>
