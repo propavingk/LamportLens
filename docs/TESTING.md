@@ -62,3 +62,12 @@ parity check exists to catch.
 
 A disagreement prints both values and fails the build. This is the check that
 caught the only real cross-engine defect so far: the TypeScript sort of the
+underfunded list was ascending by deficit while Python reports largest first,
+which an eyeball would never have noticed.
+
+## Adding tests for a change
+
+| Change | Tests to add |
+|---|---|
+| a new validation rule | a failing line in `samples/broken-lines.jsonl` plus a case in `test_model.py` and `verify.test.ts` |
+| a new arithmetic rule | a hand-computed anchor in both `test_rent.py` and `verify.test.ts` |
