@@ -7,3 +7,8 @@
 
   <g font-family='"Cascadia Mono", "JetBrains Mono", Consolas, monospace' font-size="11" fill="#5F6F66">
     <text x="112" y="44">accounts</text>
+    <text x="616" y="44" text-anchor="end">locked lamports</text>
+  </g>
+
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#1C3A2E">
+    <text x="16" y="58">0 bytes</text>
