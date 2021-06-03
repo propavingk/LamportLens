@@ -71,3 +71,12 @@ which an eyeball would never have noticed.
 |---|---|
 | a new validation rule | a failing line in `samples/broken-lines.jsonl` plus a case in `test_model.py` and `verify.test.ts` |
 | a new arithmetic rule | a hand-computed anchor in both `test_rent.py` and `verify.test.ts` |
+| a new aggregate | a designed count in `test_audit.py` on a fixture, and the same assertion in the verifier |
+| a new report field | a shape assertion in `test_cli.py`, and a line in `docs/FORMAT.md` |
+| a new CLI flag | an exit-code or output assertion in `test_cli.py`, and a row in the README command table |
+
+Rule of thumb: if the change touches something the parity script compares, it
+needs assertions on both sides. If it only touches rendering, one side is
+enough, and the parity comparison should be unchanged.
+
+## Fixture policy
