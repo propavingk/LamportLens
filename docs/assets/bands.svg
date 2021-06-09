@@ -17,3 +17,8 @@
     <text x="16" y="106">1k-9.9k</text>
     <text x="16" y="122">10k-99k</text>
     <text x="16" y="138">100k-999k</text>
+    <text x="16" y="154">1M and above</text>
+  </g>
+
+  <g fill="#1C3A2E">
+    <rect x="112" y="50" width="24" height="8"/>
