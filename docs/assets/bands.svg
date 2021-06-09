@@ -22,3 +22,9 @@
 
   <g fill="#1C3A2E">
     <rect x="112" y="50" width="24" height="8"/>
+    <rect x="112" y="66" width="24" height="8"/>
+    <rect x="112" y="82" width="208" height="8"/>
+    <rect x="112" y="98" width="64" height="8"/>
+  </g>
+  <rect x="112" y="146" width="16" height="8" fill="#8F6B12"/>
+
