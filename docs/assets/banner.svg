@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="176" viewBox="0 0 640 176" role="img" aria-labelledby="ll-banner-title ll-banner-desc">
+  <!-- palette: mint paper and pine ink; slate for secondary text; one copper accent on the live SIMD-0437 step. contrast against #F2F7F3: pine #1C3A2E 11.4:1, slate #5F6F66 4.9:1, copper #8F6B12 4.5:1. motion: a marker steps down the six rates in order, encoding the SIMD-0437 schedule; with reduced motion the marker sits on the live step and the banner still reads. every number is exact arithmetic on the documented formula: (128 + 0) * rate. -->
+  <title id="ll-banner-title">lamportlens banner: the SIMD-0437 rate ladder</title>
+  <desc id="ll-banner-desc">Six bars, one per lamports-per-byte step from 6,960 down to 696, showing the rent-exempt minimum for a zero-byte account at each step. The 6,333 bar is copper because that step is live on mainnet. A marker steps down the ladder in order.</desc>
+  <style>
