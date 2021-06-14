@@ -3,3 +3,8 @@
   <title id="ll-banner-title">lamportlens banner: the SIMD-0437 rate ladder</title>
   <desc id="ll-banner-desc">Six bars, one per lamports-per-byte step from 6,960 down to 696, showing the rent-exempt minimum for a zero-byte account at each step. The 6,333 bar is copper because that step is live on mainnet. A marker steps down the ladder in order.</desc>
   <style>
+    @media (prefers-reduced-motion: no-preference) {
+      #ll-marker { animation: ll-step 6s steps(5) infinite; }
+    }
+    @keyframes ll-step {
+      from { transform: translateX(-80px); }
