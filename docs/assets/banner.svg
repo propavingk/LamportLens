@@ -8,3 +8,9 @@
     }
     @keyframes ll-step {
       from { transform: translateX(-80px); }
+      to { transform: translateX(320px); }
+    }
+  </style>
+  <rect width="640" height="176" fill="#F2F7F3"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">
