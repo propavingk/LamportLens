@@ -19,3 +19,9 @@
   </g>
   <text x="16" y="76" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#5F6F66">the SIMD-0437 ladder</text>
 
+  <g fill="#1C3A2E">
+    <rect x="156" y="40" width="40" height="72"/>
+    <rect x="316" y="60" width="40" height="52"/>
+    <rect x="396" y="84" width="40" height="28"/>
+    <rect x="476" y="96" width="40" height="16"/>
+    <rect x="556" y="104" width="40" height="8"/>
