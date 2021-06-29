@@ -25,3 +25,8 @@
     <rect x="396" y="84" width="40" height="28"/>
     <rect x="476" y="96" width="40" height="16"/>
     <rect x="556" y="104" width="40" height="8"/>
+  </g>
+  <rect x="236" y="48" width="40" height="64" fill="#8F6B12"/>
+
+  <line x1="176" y1="112" x2="576" y2="112" stroke="#1C3A2E" stroke-width="1.5"/>
+
