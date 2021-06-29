@@ -14,3 +14,8 @@
   <rect width="640" height="176" fill="#F2F7F3"/>
 
   <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="600">
+    <text x="16" y="56" fill="#1C3A2E">lamport</text>
+    <text x="108" y="56" fill="#5F6F66">lens</text>
+  </g>
+  <text x="16" y="76" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#5F6F66">the SIMD-0437 ladder</text>
+
