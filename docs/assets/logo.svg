@@ -3,3 +3,5 @@
   <title id="ll-logo-title">lamportlens wordmark</title>
   <desc id="ll-logo-desc">The name lamportlens set in a single weight, split at the compound boundary: lamport in pine, lens in slate, with a tagline underneath.</desc>
   <rect width="360" height="96" fill="#F2F7F3"/>
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="40" font-weight="600">
+    <text x="24" y="56" fill="#1C3A2E">lamport</text>
