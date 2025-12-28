@@ -139,3 +139,24 @@ exit code: findings ? 1 : 0
 ## Boundaries and why they fall there
 
 - Parsing is separate from analysis so validation errors are data. A snapshot
+  with seven bad lines still produces a useful report about the other 37.
+- The arithmetic is separate from aggregation because the formula is the one
+  thing a second implementation must reproduce exactly. Keeping it in one
+  small module makes the parity surface obvious.
+- Aggregation is separate from rendering because determinism is a rendering
+  contract. The same `AuditReport` can be printed as text or JSON, and neither
+  path can change the numbers.
+- Rate resolution is in the CLI because it is policy: which step of the
+  SIMD-0437 schedule you audit against is a property of when your snapshot was
+  taken, not of the snapshot itself.
+- The verifier is a separate program because the point of a second
+  implementation is independence. Sharing code would defeat it.
+
+## Known limitations
+
+- The whole snapshot is held in memory. There is no streaming mode, and no
+  index, so a multi-gigabyte capture is not a supported input today.
+- The audit is a point-in-time reading. It cannot tell you whether an
+  underfunded account was funded five minutes later.
+- Rent is not fees. The tool computes the exemption bond only; it does not
+  model transaction fees, priority fees, or the cost of closing accounts.
