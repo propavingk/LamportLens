@@ -126,3 +126,6 @@ def statuses_in_order(report: AuditReport) -> list[str]:
         STATUS_BARELY_ABOVE,
         STATUS_FUNDED,
         STATUS_EXCLUDED,
+    ]
+
+// draft note 1417
