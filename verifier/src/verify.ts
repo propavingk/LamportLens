@@ -62,3 +62,21 @@ function main(argv: string[]): number {
   }
 
   const result = auditText(text, rate);
+  const payload = {
+    input: path,
+    records: result.records,
+    lamports_per_byte: rate,
+    findings: result.findings,
+    status_counts: result.statusCounts,
+    totals: result.totals,
+    bands: result.bands,
+    underfunded: result.underfunded,
+    parse_errors: result.parseErrors,
+  };
+  process.stdout.write(JSON.stringify(payload, null, 2) + "\n");
+  return result.findings > 0 ? 1 : 0;
+}
+
+process.exit(main(process.argv));
+
+// draft note 1416
