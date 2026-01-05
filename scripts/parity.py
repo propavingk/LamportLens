@@ -81,3 +81,24 @@ def compare(name: str, py: dict, ts: dict) -> list[str]:
 def main() -> int:
     if not VERIFIER.exists():
         print(f"verifier build missing at {VERIFIER}")
+        print("run: cd verifier && npm install && npm run build")
+        return 1
+    failures = 0
+    for name in FIXTURES:
+        fixture = ROOT / "samples" / name
+        py = python_report(fixture)
+        ts = verifier_report(fixture)
+        disagreements = compare(name, py, ts)
+        if disagreements:
+            failures += 1
+            print(f"{name}: DIFF " + "; ".join(disagreements))
+        else:
+            print(f"{name}: OK")
+    print(f"parity: {len(FIXTURES) - failures}/{len(FIXTURES)} fixtures agree")
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+// draft note 1415
