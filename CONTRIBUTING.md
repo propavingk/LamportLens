@@ -106,3 +106,19 @@ test: anchor the 165-byte minimum in both implementations
 ## Reviewing your own diff
 
 Before asking for review, read your diff once as if it were someone else's:
+
+- Does the change alter arithmetic? Then both implementations and parity moved
+  together, and the changelog says which rate applies.
+- Does the change alter aggregation? Then the tests that assert totals,
+  bands, or owner summaries were updated, not deleted.
+- Did you touch an asset? Then `python scripts/verify.py` exits 0 and the XML
+  still parses.
+- Did you add a number to a document? Where did it come from?
+
+## Reporting bugs
+
+Open an issue with the exact command you ran, the smallest snapshot that shows
+the problem, and the real output. Two or three JSONL lines usually reproduce a
+report bug. If the snapshot came from a real cluster and contains addresses
+you would rather not publish, replace every address with a synthetic one of
+the same shape; the arithmetic depends only on lamports and data length.
