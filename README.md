@@ -596,4 +596,4 @@ animation.
 
 MIT. See [LICENSE](LICENSE).
 
-<!-- draft note 1287 -->
+<!-- draft note 1288 -->
