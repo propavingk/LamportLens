@@ -109,3 +109,25 @@ def build_snapshot() -> list[dict]:
     # some spread across owners.
     records.append(record(address(41), 8_000_000, 82, ASSOCIATED))
     records.append(record(address(42), 8_500_000, 82, ASSOCIATED))
+    records.append(record(address(43), (128 + 82) * 6333, 82, ASSOCIATED))
+    return records
+
+
+def write_jsonl(path: Path, records: list[dict]) -> None:
+    lines = [json.dumps(obj, separators=(",", ":"), sort_keys=True) for obj in records]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+
+
+def main() -> int:
+    here = Path(__file__).resolve().parent
+    clean = build_clean()
+    snapshot = build_snapshot()
+    write_jsonl(here / "clean-snapshot.jsonl", clean)
+    write_jsonl(here / "snapshot.jsonl", snapshot)
+    print(f"clean-snapshot.jsonl: {len(clean)} records")
+    print(f"snapshot.jsonl: {len(snapshot)} records")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
