@@ -75,3 +75,21 @@ class ParseRecordTests(unittest.TestCase):
 
 
 class ParseTextTests(unittest.TestCase):
+    def test_broken_lines_collect_errors_and_keep_going(self):
+        text = (SAMPLES / "broken-lines.jsonl").read_text(encoding="utf-8")
+        records, errors = parse_text(text)
+        self.assertEqual(len(records), 2)
+        self.assertEqual(len(errors), 7)
+        self.assertEqual([number for number, _ in errors], [2, 3, 4, 5, 6, 7, 8])
+
+    def test_blank_lines_are_ignored(self):
+        text = "\n\n" + json.dumps(
+            {"address": "A", "lamports": 1, "data_len": 0, "owner": "O"}
+        ) + "\n"
+        records, errors = parse_text(text)
+        self.assertEqual(len(records), 1)
+        self.assertEqual(errors, [])
+
+
+if __name__ == "__main__":
+    unittest.main()
