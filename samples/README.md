@@ -50,3 +50,15 @@ findings equal to 3. Exit code 1.
 
 Nine lines, seven of them deliberately invalid, covering every validation
 rule: invalid JSON, missing address, negative lamports, a data length above
+10 MiB, missing owner, a string lamports value, and a non-boolean executable
+flag. Two valid records surround the bad lines to prove that parsing
+continues. Expected result: 2 records and 7 parse errors, exit code 1.
+
+## Why synthetic
+
+Producing an honest fixture with exactly these status counts requires either
+a real snapshot that happens to contain the boundary cases (possible, but not
+reproducible or shareable) or a constructed vector. Constructed vectors are
+labelled as such here rather than presented as captured data. If you have a
+real capture, the tool reads it; the format is documented in
+`docs/FORMAT.md`.
