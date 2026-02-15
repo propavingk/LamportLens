@@ -65,3 +65,18 @@ class SnapshotTests(unittest.TestCase):
     def test_system_owner_summary(self):
         owner = self.report.owners["11111111111111111111111111111111"]
         self.assertEqual(owner.accounts, 2)
+        self.assertEqual(owner.underfunded, 0)
+        self.assertEqual(owner.locked, 2 * 810_624)
+
+    def test_reclaimable_counts_minimum_held_accounts(self):
+        minimum = sum(
+            a.record.lamports
+            for a in self.report.assessments
+            if a.status in (STATUS_AT_MINIMUM, "barely-above")
+        )
+        self.assertEqual(self.report.reclaimable, minimum)
+        self.assertGreater(self.report.reclaimable, 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
