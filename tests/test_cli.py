@@ -69,3 +69,19 @@ class FormatTests(unittest.TestCase):
         self.assertEqual(default_code, 1)
         self.assertEqual(historical_code, 1)
         default_findings = int(default_out.split("FINDINGS: ")[1])
+        historical_findings = int(historical_out.split("FINDINGS: ")[1])
+        self.assertGreater(historical_findings, default_findings)
+
+    def test_bands_command(self):
+        code, output = run(["bands", str(SAMPLES / "snapshot.jsonl")])
+        self.assertEqual(code, 0)
+        self.assertIn("0 bytes: accounts 3", output)
+
+    def test_owners_command(self):
+        code, output = run(["owners", str(SAMPLES / "snapshot.jsonl")])
+        self.assertEqual(code, 0)
+        self.assertIn("BPFLoaderUpgradeab1e11111111111111111111111", output)
+
+
+if __name__ == "__main__":
+    unittest.main()
