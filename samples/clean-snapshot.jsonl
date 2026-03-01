@@ -7,3 +7,6 @@
 {"address":"FixTure006AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab","data_len":165,"lamports":2500000,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
 {"address":"FixTure007AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab","data_len":165,"lamports":2500000,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
 {"address":"FixTure008AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab","data_len":165,"lamports":2500000,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
+{"address":"FixTure009AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab","data_len":165,"lamports":2500000,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
+{"address":"FixTure010AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab","data_len":0,"lamports":9000000,"owner":"11111111111111111111111111111111"}
+{"address":"FixTure011AbCdEfGhJkMnPqRsTuVwXyZ123456789Ab","data_len":300000,"executable":true,"lamports":500000,"owner":"BPFLoaderUpgradeab1e11111111111111111111111"}
