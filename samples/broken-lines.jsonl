@@ -5,3 +5,5 @@ not json at all
 {"address":"FixTure903AbCdEfGhJkMnPqRsTuVwXyZ123456","lamports":2000000,"data_len":99999999,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
 {"address":"FixTure904AbCdEfGhJkMnPqRsTuVwXyZ123456","lamports":2000000,"data_len":165}
 {"address":"FixTure905AbCdEfGhJkMnPqRsTuVwXyZ123456","lamports":"2000000","data_len":165,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
+{"address":"FixTure906AbCdEfGhJkMnPqRsTuVwXyZ123456","lamports":2000000,"data_len":165,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA","executable":"yes"}
+{"address":"FixTure907AbCdEfGhJkMnPqRsTuVwXyZ123456","lamports":2500000,"data_len":165,"owner":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
