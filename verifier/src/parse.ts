@@ -66,3 +66,19 @@ export function parseText(text: string): { records: AccountRecord[]; errors: Par
     const raw = lines[index];
     if (raw.trim() === "") continue;
     const number = index + 1;
+    let decoded: unknown;
+    try {
+      decoded = JSON.parse(raw);
+    } catch {
+      errors.push({ line: number, message: `line ${number}: invalid JSON` });
+      continue;
+    }
+    try {
+      records.push(parseRecord(decoded, number));
+    } catch (error) {
+      const message = error instanceof FormatError ? error.message : String(error);
+      errors.push({ line: number, message });
+    }
+  }
+  return { records, errors };
+}
