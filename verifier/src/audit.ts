@@ -109,3 +109,4 @@ export function audit(
 export function auditText(text: string, lamportsPerByte = DEFAULT_LAMPORTS_PER_BYTE): AuditResult {
   const { records, errors } = parseText(text);
   return audit(records, errors, lamportsPerByte);
+}
