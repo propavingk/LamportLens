@@ -78,5 +78,3 @@ function main(argv: string[]): number {
 }
 
 process.exit(main(process.argv));
-
-// draft note 1416
