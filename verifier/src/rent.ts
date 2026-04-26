@@ -41,3 +41,14 @@ export interface AccountRecord {
 export function minimumBalance(dataLen: number, lamportsPerByte = DEFAULT_LAMPORTS_PER_BYTE): number {
   if (dataLen < 0) throw new Error("dataLen must be >= 0");
   if (lamportsPerByte <= 0) throw new Error("lamportsPerByte must be > 0");
+  return (ACCOUNT_STORAGE_OVERHEAD + dataLen) * lamportsPerByte;
+}
+
+export function assess(record: AccountRecord, lamportsPerByte = DEFAULT_LAMPORTS_PER_BYTE): string {
+  const minimum = minimumBalance(record.dataLen, lamportsPerByte);
+  if (record.executable) return STATUS_EXCLUDED;
+  if (record.lamports < minimum) return STATUS_UNDERFUNDED;
+  if (record.lamports === minimum) return STATUS_AT_MINIMUM;
+  if (record.lamports <= Math.trunc(minimum * BARELY_ABOVE_RATIO)) return STATUS_BARELY_ABOVE;
+  return STATUS_FUNDED;
+}
