@@ -56,3 +56,16 @@ test("snapshot counts match the designed fixture", () => {
   assert.equal(result.totals.deficit, 255_569 + 655_569 + 110_624);
   const zero = result.bands.find((band) => band.label === "0 bytes");
   assert.equal(zero?.accounts, 3);
+  assert.equal(zero?.locked, 3 * 810_624);
+});
+
+test("historical rate raises the deficit", () => {
+  const result = auditText(sample("snapshot.jsonl"), 6960);
+  assert.ok(result.findings > 3);
+});
+
+test("broken lines are collected", () => {
+  const result = auditText(sample("broken-lines.jsonl"));
+  assert.equal(result.records, 2);
+  assert.equal(result.parseErrors.length, 7);
+});
