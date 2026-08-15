@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: lamportlens
+message: If you use this software, please cite it as below.
+type: software
+authors:
+  - name: the lamportlens authors
+abstract: Rent-exempt and balance hygiene auditor for captured Solana account snapshots. Reads a JSONL export of account records and reports underfunded accounts, storage bond concentration, and per-owner lamport distribution.
+license: MIT
+version: 0.1.0
+date-released: 2026-09-24
+keywords:
+  - solana
+  - rent
+  - lamports
+  - accounts
+  - cli
