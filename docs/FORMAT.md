@@ -140,3 +140,29 @@ a cut list always prints how many entries were omitted.
 | `totals.deficit` | int | total deficit |
 | `totals.reclaimable` | int | balance in at-minimum and barely-above accounts |
 | `underfunded` | array | objects with `address`, `owner`, `lamports`, `minimum`, `deficit`; largest deficit first |
+| `bands` | array | objects with `label`, `accounts`, `locked` |
+| `owners` | object | owner id to `accounts`, `underfunded`, `locked`, `balance` |
+| `parse_errors` | array | objects with `line` and `message` |
+
+Adding keys is a minor change. Renaming or removing a key needs a changelog
+entry, because consumers diff this output in CI.
+
+## Exit codes
+
+| Code | Meaning |
+|---|---|
+| 0 | no findings: no underfunded accounts, no parse errors |
+| 1 | findings present |
+| 2 | usage error: missing or unreadable input file |
+
+Accounts at exactly the minimum are not findings. They are exempt, which is
+the state the cluster requires; they are reported under `reclaimable` because
+closing them recovers the bond, not because they are wrong.
+
+## Determinism guarantees
+
+- Two runs over the same input produce byte-identical output.
+- JSON output uses stable key order and sorted collections.
+- Nothing in the output depends on wall-clock time, locale, or randomness.
+- The TypeScript verifier emits the same subset of keys so
+  `scripts/parity.py` can compare implementations without shared code.
