@@ -88,3 +88,21 @@ The default rate is the SIMD-0437 step live on mainnet. When the network
 activates the next step, the same snapshot reports different deficits and
 different reclaimable balances, because the bond shrinks. That is not a bug in
 the tool and not a change in the accounts. Two habits keep this sane:
+
+1. Record the report's header line with the artifact. The rate used is part of
+   the result.
+2. When the default changes, re-run the previous snapshot with both the old
+   and the new rate once, and diff the reports. The difference is exactly the
+   effect of the network upgrade on your storage bond, which is worth knowing.
+
+## Snapshot hygiene
+
+- Fixtures and tests use synthetic addresses only. Keep your captures out of
+  the repository; a snapshot of your program's accounts is an operational
+  dataset.
+- A snapshot file contains no secrets by design. If your exporter writes
+  private keys, seeds, or RPC credentials anywhere near the JSONL, fix the
+  exporter before running anything here.
+- Large captures are held in memory. A snapshot that fits comfortably in a few
+  hundred megabytes is fine; if yours is larger, slice it by owner program and
+  audit each slice.
