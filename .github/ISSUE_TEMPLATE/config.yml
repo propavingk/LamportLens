@@ -4,3 +4,5 @@ contact_links:
     url: https://example.invalid/lamportlens/docs/FORMAT.md
     about: Input fields, validation rules, report fields and exit codes
   - name: Rate schedule
+    url: https://example.invalid/lamportlens/docs/RATE_SCHEDULE.md
+    about: The SIMD-0437 steps, their dates, and the minimum balances they produce
