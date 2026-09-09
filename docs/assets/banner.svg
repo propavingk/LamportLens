@@ -41,3 +41,13 @@
   <text x="256" y="144" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#8F6B12">live on mainnet</text>
 
   <g font-family='"Cascadia Mono", "JetBrains Mono", Consolas, monospace' font-size="11" fill="#1C3A2E">
+    <text x="176" y="32" text-anchor="middle">890880</text>
+    <text x="576" y="96" text-anchor="middle">89088</text>
+  </g>
+
+  <g id="ll-marker">
+    <path d="M248 118 L264 118 L256 126 Z" fill="#1C3A2E"/>
+  </g>
+
+  <text x="16" y="168" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#5F6F66">bars: rent-exempt minimum for a zero-byte account at each step</text>
+</svg>
