@@ -67,3 +67,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `--lamports-per-byte` override.
 
 ## [0.2.0] - 2016-10-04
+
+### Added
+
+- Status classification: underfunded, at-minimum, funded.
+- Strict validation for address, lamports, data_len and owner.
+
+## [0.1.0] - 2015-05-19
+
+### Added
+
+- First release: JSONL account model and the rent-exempt minimum formula.
+- Line-oriented text report with a findings total.
