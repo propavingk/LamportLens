@@ -78,3 +78,19 @@ a parameter with a dated default rather than baking it into the arithmetic.
 The alternative, a single hardcoded constant, would silently reinterpret old
 snapshots the day the network activates the next SIMD-0437 step. Because the
 rate is a parameter, an old snapshot can be re-audited under both rates, which
+is exactly the analysis an operator needs when storage economics change.
+
+## JSON keys are a contract
+
+`docs/FORMAT.md` specifies the JSON output field by field, and the parity
+script depends on those names. The alternative, calling the JSON experimental
+and changing it freely, is how CI consumers break silently. Adding keys stays
+allowed; renaming or removing one requires a changelog entry, so a consumer
+can pin a version and upgrade on purpose.
+
+## Offline and deterministic by construction
+
+No sockets, no subprocesses in the shipped code, no clock, no randomness. The
+alternative, a mode that talks to an RPC endpoint for freshness, would make
+every report unreproducible and every test flaky in a new way. Capturing is
+out of scope on purpose; auditing a file someone else captured is the job.
