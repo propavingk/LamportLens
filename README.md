@@ -595,5 +595,3 @@ animation.
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
-<!-- draft note 1413 -->
