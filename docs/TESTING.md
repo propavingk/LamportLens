@@ -80,3 +80,20 @@ needs assertions on both sides. If it only touches rendering, one side is
 enough, and the parity comparison should be unchanged.
 
 ## Fixture policy
+
+Fixtures are synthetic and reproducible. `samples/build_fixture.py` rebuilds
+`clean-snapshot.jsonl` and `snapshot.jsonl` byte for byte, and
+`samples/README.md` documents the construction and states the synthetic
+nature. Program ids that appear are real, well-known addresses; account
+addresses are clearly patterned fakes. No fixture may ever contain a private
+key, seed, or credential of any kind.
+
+When you add a fixture, add it in three places: the builder, the samples
+README, and at least one test in each implementation.
+
+## Determinism expectations
+
+Every test assumes byte-identical output for identical input. When adding
+output, avoid introducing anything that violates that: no wall-clock reads,
+no locale-dependent formatting, no iteration over unordered maps without
+sorting. If a test flakes, determinism is the first suspect, not the last.
