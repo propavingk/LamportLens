@@ -87,3 +87,21 @@ lamportlens audit snapshot.jsonl --preset simd-0437-2
 lamportlens audit snapshot.jsonl --lamports-per-byte 6960
 ```
 
+Resolution order is explicit: `--lamports-per-byte` wins over `--preset`,
+which wins over the default. The same options exist on the TypeScript
+verifier, and the parity script in CI compares both implementations at the
+default rate on every fixture.
+
+## Sources
+
+- Solana documentation, Accounts: the rent-exempt minimum formula and the
+  128 byte storage overhead.
+- Solana upgrade notes, Reduced Rent: the SIMD-0437 step list, the
+  6,960 to 6,333 reduction live on mainnet since epoch 1028 on 2026-09-03,
+  and the remaining steps queued behind Agave 4.4.
+- solana-improvement-documents, SIMD-0194: renaming to a single
+  `lamports_per_byte` and deprecating the floating point threshold.
+
+This document restates those sources; it does not replace them. When the
+network moves to the next step, re-read the upgrade notes before changing
+anything here.
