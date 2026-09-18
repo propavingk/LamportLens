@@ -30,3 +30,12 @@ Paste the output verbatim, including the `FINDINGS:` line:
 
 ```
 
+```
+
+**Environment**
+
+- OS:
+- Python version (`python --version`):
+- Node version (`node --version`) if the verifier is involved:
+- Which implementation: Python / TypeScript / both differ
+- Rate in use: default, `--preset`, or explicit `--lamports-per-byte`
