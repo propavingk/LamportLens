@@ -43,3 +43,15 @@ jobs:
     name: Cross-engine parity
     runs-on: ubuntu-latest
     needs: [python, verifier]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build the verifier
+        run: cd verifier && npm ci && npm run build
+      - name: Compare engines on the fixtures
+        run: python scripts/parity.py
