@@ -24,5 +24,3 @@ decide Y" is more useful than a field name.
 
 The two implementations are kept at parity on purpose. If this feature only
 lands in one of them, say so explicitly so the trade-off is on the record.
-
-<!-- draft note 1414 -->
