@@ -36,3 +36,10 @@ running this weekly would ask for next.
 - A contributed fixture from a real capture, with provenance recorded in
   `samples/README.md`.
 
+## Out of scope
+
+- Talking to a cluster. Capture stays someone else's job.
+- Converting lamports to SOL or fiat in the report. See
+  `docs/DESIGN_NOTES.md` for why.
+- Signing, closing, or funding anything. The tool reports; it does not send
+  transactions.
