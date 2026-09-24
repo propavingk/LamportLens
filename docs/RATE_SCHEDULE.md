@@ -52,7 +52,9 @@ bytes. The 0 byte row is the empty-account case that the fixtures use.
 | 10 MiB | 72,981,780,480 | 66,407,128,704 | 53,268,311,040 | 27,001,161,600 | 13,862,343,936 | 7,298,178,048 |
 
 10 MiB is Solana's maximum account data size (`MAX_ACCOUNT_DATA_LEN`), so the
-last row is the largest exemption any account can require.
+last row is the largest exemption any account can require. Sizes between the
+listed rows are computed by the same formula; the table shows the common
+cases, not a lookup limit.
 
 ## Why the step history matters to an audit
 
