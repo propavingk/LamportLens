@@ -152,7 +152,7 @@ entry, because consumers diff this output in CI.
 | Code | Meaning |
 |---|---|
 | 0 | no findings: no underfunded accounts, no parse errors |
-| 1 | findings present |
+| 1 | findings present: at least one underfunded account or parse error |
 | 2 | usage error: missing or unreadable input file |
 
 Accounts at exactly the minimum are not findings. They are exempt, which is
