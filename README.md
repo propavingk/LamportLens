@@ -327,7 +327,7 @@ PYTHONPATH=src python -m lamportlens audit snapshot.jsonl --format json --output
 
 The JSON output is stable, so `report.json` can be committed as a build
 artifact or diffed between runs. Adding keys is a minor change; renaming or
-removing one needs a changelog entry, because consumers depend on them.
+removing one needs a changelog entry, because consumers depend on them. A second gate can diff `report.json` between runs and alert when `totals.locked` grows past a chosen margin.
 
 ---
 
