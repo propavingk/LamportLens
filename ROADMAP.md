@@ -26,6 +26,7 @@ running this weekly would ask for next.
   describes instead of only the file it read.
 - A documented capture recipe for one RPC method, so the README can link to a
   script that produces the format honestly for at least one provider.
+- A worked budget table for a token program with fifty thousand token accounts.
 
 ## Verification
 
